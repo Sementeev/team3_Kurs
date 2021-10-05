@@ -1,15 +1,15 @@
 package calculator;
 public interface CalculateInterface{
 	
-	//метод который будет считать сразу все
+	//РјРµС‚РѕРґ РєРѕС‚РѕСЂС‹Р№ Р±СѓРґРµС‚ СЃС‡РёС‚Р°С‚СЊ СЃСЂР°Р·Сѓ РІСЃРµ
 	default void CalculateDeposit() {
 		CalculateNalog();
 		CalculatePrecent();
 		CalculateDohod();
 	}
 	
-	void CalculateNalog(); //выстиываем налог
-	void CalculatePrecent(); //выстиываем доход по процентам
-	void CalculateDohod(); //считаем итоговый доход
+	void CalculateNalog(); //РІС‹СЃС‚РёС‹РІР°РµРј РЅР°Р»РѕРі
+	void CalculatePrecent(); //РІС‹СЃС‚РёС‹РІР°РµРј РґРѕС…РѕРґ РїРѕ РїСЂРѕС†РµРЅС‚Р°Рј
+	void CalculateDohod(); //СЃС‡РёС‚Р°РµРј РёС‚РѕРіРѕРІС‹Р№ РґРѕС…РѕРґ
 	
 }
