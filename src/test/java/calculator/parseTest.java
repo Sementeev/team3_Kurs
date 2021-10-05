@@ -1,4 +1,4 @@
-package calculator;
+/*package calculator;
 
 import static org.junit.Assert.*;
 
@@ -9,12 +9,12 @@ public class parseTest {
 	calculate calc;
 	@Before
     public void setUp() throws Exception {
-		calc = new calculate("10", "6", "10000", true, true, "Рубли"); // создаем экземпляр класса calculate - входные данные не иимеют значения
+		calc = new calculate("10", "6", "10000", true, true, "ДђГіГЎГ«ДЌ"); // Е„Г®Г§Г¤Е•ДєД› ГЅД™Г§ДєД›ДЏГ«Л™Д‘ Д™Г«Е•Е„Е„Е• calculate - ГўЕ‘Г®Г¤Г­Е±Дє Г¤Е•Г­Г­Е±Дє Г­Дє ДЌДЌД›ДєЕЈЕ€ Г§Г­Е•Г·ДєГ­ДЌЛ™
     }
 
     @Test
     public void test() {
-        assertTrue(calc.ParseAllData("10", "0.023f", "010.2")); // убеждаемся что данные могут быть конвертированны в Float
+        assertTrue(calc.ParseAllData("10", "0.023f", "010.2")); // ГіГЎДєД‡Г¤Е•ДєД›Е„Л™ Г·Е€Г® Г¤Е•Г­Г­Е±Дє Д›Г®ДѓГіЕ€ ГЎЕ±Е€Гј Д™Г®Г­ГўДєД‘Е€ДЌД‘Г®ГўЕ•Г­Г­Е± Гў Float
     }
-}
+}*/
 
