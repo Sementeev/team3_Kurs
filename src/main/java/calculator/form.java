@@ -1,67 +1,67 @@
 package calculator;
 
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener; //библиотека для события слушателя
+import java.awt.event.ActionListener; //Р±РёР±Р»РёРѕС‚РµРєР° РґР»СЏ СЃРѕР±С‹С‚РёСЏ СЃР»СѓС€Р°С‚РµР»СЏ
 import java.io.File;
 
-import javax.swing.*; // Библиотека для GUI (построена на основе awt)
+import javax.swing.*; // Р‘РёР±Р»РёРѕС‚РµРєР° РґР»СЏ GUI (РїРѕСЃС‚СЂРѕРµРЅР° РЅР° РѕСЃРЅРѕРІРµ awt)
 
 public class form {
-	static JComboBox<?> combobox; // добавление JComboBox
+	static JComboBox<?> combobox; // РґРѕР±Р°РІР»РµРЅРёРµ JComboBox
 		
 	public form() {
-		JFrame main_GUI = new JFrame("Депозитный калькулятор с капитализацией");	// создание графического окна
-		main_GUI.setTitle ("Калькулятор");
+		JFrame main_GUI = new JFrame("Р”РµРїРѕР·РёС‚РЅС‹Р№ РєР°Р»СЊРєСѓР»СЏС‚РѕСЂ СЃ РєР°РїРёС‚Р°Р»РёР·Р°С†РёРµР№");	// СЃРѕР·РґР°РЅРёРµ РіСЂР°С„РёС‡РµСЃРєРѕРіРѕ РѕРєРЅР°
+		main_GUI.setTitle ("РљР°Р»СЊРєСѓР»СЏС‚РѕСЂ");
 		main_GUI.setBounds(500,200,400,400);
-		main_GUI.setResizable(false); // фиксированный размер окна
+		main_GUI.setResizable(false); // С„РёРєСЃРёСЂРѕРІР°РЅРЅС‹Р№ СЂР°Р·РјРµСЂ РѕРєРЅР°
 		
 		
-		final JPanel main_panel = new JPanel(); // Панель - используется для организации компонентов в окне
+		final JPanel main_panel = new JPanel(); // РџР°РЅРµР»СЊ - РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РґР»СЏ РѕСЂРіР°РЅРёР·Р°С†РёРё РєРѕРјРїРѕРЅРµРЅС‚РѕРІ РІ РѕРєРЅРµ
 		main_panel.setLayout(null);
 		main_GUI.add(main_panel);
 		
-		JLabel laba_info = new JLabel("Депозитный калькулятор"); // Отображение текста или изображения
+		JLabel laba_info = new JLabel("Р”РµРїРѕР·РёС‚РЅС‹Р№ РєР°Р»СЊРєСѓР»СЏС‚РѕСЂ"); // РћС‚РѕР±СЂР°Р¶РµРЅРёРµ С‚РµРєСЃС‚Р° РёР»Рё РёР·РѕР±СЂР°Р¶РµРЅРёСЏ
 		laba_info.setBounds(135,0,150,30);
 		main_panel.add(laba_info);
 		
 	
-		JButton button_exit = new JButton("Выход"); // добавляем кнопку Выход
+		JButton button_exit = new JButton("Р’С‹С…РѕРґ"); // РґРѕР±Р°РІР»СЏРµРј РєРЅРѕРїРєСѓ Р’С‹С…РѕРґ
 		button_exit.setBounds(270,250,100,40);
-		ActionListener actionListener = new ListenerButton(); //создаем слушатель
-		button_exit.addActionListener(actionListener); // добавляем слушатель к кнопке
+		ActionListener actionListener = new ListenerButton(); //СЃРѕР·РґР°РµРј СЃР»СѓС€Р°С‚РµР»СЊ
+		button_exit.addActionListener(actionListener); // РґРѕР±Р°РІР»СЏРµРј СЃР»СѓС€Р°С‚РµР»СЊ Рє РєРЅРѕРїРєРµ
 		main_panel.add(button_exit);
 		
-		JLabel sum_label = new JLabel ("Сумма вклада: "); // Добавляем надпись 
+		JLabel sum_label = new JLabel ("РЎСѓРјРјР° РІРєР»Р°РґР°: "); // Р”РѕР±Р°РІР»СЏРµРј РЅР°РґРїРёСЃСЊ 
 		sum_label.setBounds(10,50,100,40);
 		main_panel.add(sum_label);
 		
-		JTextField sum_field = new JTextField ();  // Добавляем поле ввода
+		JTextField sum_field = new JTextField ();  // Р”РѕР±Р°РІР»СЏРµРј РїРѕР»Рµ РІРІРѕРґР°
 		sum_field.setBounds(135, 55, 100, 30);
 		main_panel.add(sum_field);
 		
-		String [] item = { // Создаем массив  
-				"Рубли" , "Доллары" , "Евро" 		
+		String [] item = { // РЎРѕР·РґР°РµРј РјР°СЃСЃРёРІ  
+				"Р СѓР±Р»Рё" , "Р”РѕР»Р»Р°СЂС‹" , "Р•РІСЂРѕ" 		
 			};
 		
-		JComboBox currency_box = new JComboBox(item); // Создаем выпадающий бокс
+		JComboBox currency_box = new JComboBox(item); // РЎРѕР·РґР°РµРј РІС‹РїР°РґР°СЋС‰РёР№ Р±РѕРєСЃ
 		currency_box.setBounds(250,55,100,30);
 		main_panel.add(currency_box);
 		
-		JLabel term_label = new JLabel ("Срок размещения: "); // Добавляем надпись
+		JLabel term_label = new JLabel ("РЎСЂРѕРє СЂР°Р·РјРµС‰РµРЅРёСЏ: "); // Р”РѕР±Р°РІР»СЏРµРј РЅР°РґРїРёСЃСЊ
 		term_label.setBounds(10,85,115,40);
 		main_panel.add(term_label);
-		JTextField term_field = new JTextField ();  // Добавляем поле для ввода
+		JTextField term_field = new JTextField ();  // Р”РѕР±Р°РІР»СЏРµРј РїРѕР»Рµ РґР»СЏ РІРІРѕРґР°
 		term_field.setBounds(135, 90, 100, 30);
 		main_panel.add(term_field);
 		
-		JLabel rate_label = new JLabel ("Ставка (%): ");  // Добавляем надпись
+		JLabel rate_label = new JLabel ("РЎС‚Р°РІРєР° (%): ");  // Р”РѕР±Р°РІР»СЏРµРј РЅР°РґРїРёСЃСЊ
 		rate_label.setBounds(10,120,115,40);
 		main_panel.add(rate_label);
-		JTextField rate_field = new JTextField ();  // Добавляем поле для ввода 
+		JTextField rate_field = new JTextField ();  // Р”РѕР±Р°РІР»СЏРµРј РїРѕР»Рµ РґР»СЏ РІРІРѕРґР° 
 		rate_field.setBounds(135, 125, 100, 30);
 		main_panel.add(rate_field);
 		
-		JLabel resident_label = new JLabel ("Я - резидент РФ: "); // Добавляем надпись 
+		JLabel resident_label = new JLabel ("РЇ - СЂРµР·РёРґРµРЅС‚ Р Р¤: "); // Р”РѕР±Р°РІР»СЏРµРј РЅР°РґРїРёСЃСЊ 
 		resident_label.setBounds(10,199,115,40);
 		main_panel.add(resident_label);
 		
@@ -71,66 +71,66 @@ public class form {
 		
 		JMenuBar bar = new JMenuBar();  
 		main_GUI.setJMenuBar(bar);
-		JMenu menu = new JMenu("Меню");
+		JMenu menu = new JMenu("РњРµРЅСЋ");
 		main_panel.add(menu);
 		bar.add(menu);
-		JMenuItem info = new JMenuItem("Информация о расчете налога");
+		JMenuItem info = new JMenuItem("РРЅС„РѕСЂРјР°С†РёСЏ Рѕ СЂР°СЃС‡РµС‚Рµ РЅР°Р»РѕРіР°");
 		main_panel.add(info);
 		menu.add(info);
 		info.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg1) {
-				JOptionPane.showMessageDialog(main_panel, "Налоговый кодекс РФ предусматривает предусматривает налогооблажение \nвкладов в следующих случаях:\n"
-						+ "- процентная ставка по рублевому вкладу превышает 9.25% \n"
-						+ "- процентная ставка по валютному вкладу превышает 9%");
+				JOptionPane.showMessageDialog(main_panel, "РќР°Р»РѕРіРѕРІС‹Р№ РєРѕРґРµРєСЃ Р Р¤ РїСЂРµРґСѓСЃРјР°С‚СЂРёРІР°РµС‚ РїСЂРµРґСѓСЃРјР°С‚СЂРёРІР°РµС‚ РЅР°Р»РѕРіРѕРѕР±Р»Р°Р¶РµРЅРёРµ \nРІРєР»Р°РґРѕРІ РІ СЃР»РµРґСѓСЋС‰РёС… СЃР»СѓС‡Р°СЏС…:\n"
+						+ "- РїСЂРѕС†РµРЅС‚РЅР°СЏ СЃС‚Р°РІРєР° РїРѕ СЂСѓР±Р»РµРІРѕРјСѓ РІРєР»Р°РґСѓ РїСЂРµРІС‹С€Р°РµС‚ 9.25% \n"
+						+ "- РїСЂРѕС†РµРЅС‚РЅР°СЏ СЃС‚Р°РІРєР° РїРѕ РІР°Р»СЋС‚РЅРѕРјСѓ РІРєР»Р°РґСѓ РїСЂРµРІС‹С€Р°РµС‚ 9%");
 			}
 		});
 		
-		JMenuItem students = new JMenuItem("Информация о разработчиках");
-		menu.add(students); // добавляем кнопку на выпадаюзее меню
+		JMenuItem students = new JMenuItem("РРЅС„РѕСЂРјР°С†РёСЏ Рѕ СЂР°Р·СЂР°Р±РѕС‚С‡РёРєР°С…");
+		menu.add(students); // РґРѕР±Р°РІР»СЏРµРј РєРЅРѕРїРєСѓ РЅР° РІС‹РїР°РґР°СЋР·РµРµ РјРµРЅСЋ
 		students.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg1) {
-				Info Information = new Info("Информация о разработчиках", 500, 110); 
-				JLabel students_label1 = new JLabel ("Модератор - Сементеев Антон"); // Добавляем надпись 
-				students_label1.setBounds(20,10,250,30); // задаем размер
+				Info Information = new Info("РРЅС„РѕСЂРјР°С†РёСЏ Рѕ СЂР°Р·СЂР°Р±РѕС‚С‡РёРєР°С…", 500, 110); 
+				JLabel students_label1 = new JLabel ("РњРѕРґРµСЂР°С‚РѕСЂ - РЎРµРјРµРЅС‚РµРµРІ РђРЅС‚РѕРЅ"); // Р”РѕР±Р°РІР»СЏРµРј РЅР°РґРїРёСЃСЊ 
+				students_label1.setBounds(20,10,250,30); // Р·Р°РґР°РµРј СЂР°Р·РјРµСЂ
 				Information.add(students_label1);
-				JLabel students_label2 = new JLabel ("Разработчик 1 - Ильясов Максим"); // Добавляем надпись 
-				students_label2.setBounds(20,35,250,30); // задаем размер
+				JLabel students_label2 = new JLabel ("Р Р°Р·СЂР°Р±РѕС‚С‡РёРє 1 - РР»СЊСЏСЃРѕРІ РњР°РєСЃРёРј"); // Р”РѕР±Р°РІР»СЏРµРј РЅР°РґРїРёСЃСЊ 
+				students_label2.setBounds(20,35,250,30); // Р·Р°РґР°РµРј СЂР°Р·РјРµСЂ
 				Information.add(students_label2); 
-				JLabel students_label3 = new JLabel ("Разработчик 2 - Ибрагимов Айдар"); // Добавляем надпись 
-				students_label3.setBounds(260,10,250,30); // задаем размер
+				JLabel students_label3 = new JLabel ("Р Р°Р·СЂР°Р±РѕС‚С‡РёРє 2 - РР±СЂР°РіРёРјРѕРІ РђР№РґР°СЂ"); // Р”РѕР±Р°РІР»СЏРµРј РЅР°РґРїРёСЃСЊ 
+				students_label3.setBounds(260,10,250,30); // Р·Р°РґР°РµРј СЂР°Р·РјРµСЂ
 				Information.add(students_label3);
-				JLabel students_label4 = new JLabel ("Разработчик 3 - Сунагатов Ильгиз"); // Добавляем надпись 
-				students_label4.setBounds(260,35,250,30); // задаем размер
+				JLabel students_label4 = new JLabel ("Р Р°Р·СЂР°Р±РѕС‚С‡РёРє 3 - РЎСѓРЅР°РіР°С‚РѕРІ РР»СЊРіРёР·"); // Р”РѕР±Р°РІР»СЏРµРј РЅР°РґРїРёСЃСЊ 
+				students_label4.setBounds(260,35,250,30); // Р·Р°РґР°РµРј СЂР°Р·РјРµСЂ
 				Information.add(students_label4);
-				JLabel students_label5 = new JLabel (""); // Добавляем надпись 
-				students_label5.setBounds(260,35,250,30); // задаем размер
+				JLabel students_label5 = new JLabel (""); // Р”РѕР±Р°РІР»СЏРµРј РЅР°РґРїРёСЃСЊ 
+				students_label5.setBounds(260,35,250,30); // Р·Р°РґР°РµРј СЂР°Р·РјРµСЂ
 				Information.add(students_label5);
 				
 			}
 		});
 		
-		JMenuItem exit = new JMenuItem("Выход");
+		JMenuItem exit = new JMenuItem("Р’С‹С…РѕРґ");
 		main_panel.add(exit);
 		menu.add(exit);
 		exit.addActionListener(actionListener);
 		
 		
 		
-		String [] tax = { "Включать в расчет", "Не включать в расчет"
+		String [] tax = { "Р’РєР»СЋС‡Р°С‚СЊ РІ СЂР°СЃС‡РµС‚", "РќРµ РІРєР»СЋС‡Р°С‚СЊ РІ СЂР°СЃС‡РµС‚"
 		};
 		
-		JComboBox tax_box = new JComboBox(tax); // Создаем выпадающий бокс
+		JComboBox tax_box = new JComboBox(tax); // РЎРѕР·РґР°РµРј РІС‹РїР°РґР°СЋС‰РёР№ Р±РѕРєСЃ
 		tax_box.setBounds(135,165,215,30);
 		main_panel.add(tax_box);
 		
 		
-		JButton calc = new JButton("Рассчитать");
-		calc.addActionListener(new ActionListener() { // Добавляем слушателя нажатия кнопки
+		JButton calc = new JButton("Р Р°СЃСЃС‡РёС‚Р°С‚СЊ");
+		calc.addActionListener(new ActionListener() { // Р”РѕР±Р°РІР»СЏРµРј СЃР»СѓС€Р°С‚РµР»СЏ РЅР°Р¶Р°С‚РёСЏ РєРЅРѕРїРєРё
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String nalogstr = tax_box.getSelectedItem().toString();
 				boolean ychitivatNalog = true;
-				if(nalogstr == "Не включать в расчет")
+				if(nalogstr == "РќРµ РІРєР»СЋС‡Р°С‚СЊ РІ СЂР°СЃС‡РµС‚")
 					ychitivatNalog = false;
 				calculate calc = new calculate(rate_field.getText(),term_field.getText(),sum_field.getText(),resident_cbox.isSelected(),ychitivatNalog,currency_box.getSelectedItem().toString());
 			}
@@ -138,22 +138,21 @@ public class form {
 		calc.setBounds(20, 250, 100, 40);
 		main_panel.add(calc);
 		
-		JLabel tax_label = new JLabel ("Налог: "); // Добавляем надпись 
+		JLabel tax_label = new JLabel ("РќР°Р»РѕРі: "); // Р”РѕР±Р°РІР»СЏРµРј РЅР°РґРїРёСЃСЊ 
 		tax_label.setBounds(10,160,115,40);
 		main_panel.add(tax_label);
 				
 		main_GUI.setVisible(true);
 		
 		
-		main_GUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // закрытие окна JFrame и процесса Java
+		main_GUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Р·Р°РєСЂС‹С‚РёРµ РѕРєРЅР° JFrame Рё РїСЂРѕС†РµСЃСЃР° Java
 		}
 		
 		
-		public static void main(String[] args) { // интересные заметки: http://www.mstu.edu.ru/study/materials/java/
+		public static void main(String[] args) { // РёРЅС‚РµСЂРµСЃРЅС‹Рµ Р·Р°РјРµС‚РєРё: http://www.mstu.edu.ru/study/materials/java/
 			Login student = new Login();
 			
 		}
 		
 
 	}
-
