@@ -5,14 +5,14 @@ import javax.swing.JLabel;
 public class OutputDeposit extends GFrameBuilder{
 
 	public OutputDeposit(String _title, int width, int height) {
-		super(_title, width, height); //конструктор на основе асбтр класса разработчика 1
+		super(_title, width, height); //РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РЅР° РѕСЃРЅРѕРІРµ Р°СЃР±С‚СЂ РєР»Р°СЃСЃР° СЂР°Р·СЂР°Р±РѕС‚С‡РёРєР° 1
 		
 	}
-	public void SetData(String Text) // МЕТОД ДОБАВЛЯЕТ НАДПИСЬ НА Jframe
+	public void SetData(String Text) // РњР•РўРћР” Р”РћР‘РђР’Р›РЇР•Рў РќРђР”РџРРЎР¬ РќРђ Jframe
 	{
-		JLabel dohodLabel = new JLabel (Text); // Добавляем надпись 
-		dohodLabel.setBounds(20,10,200,30); // задаем размер
-		super.add(dohodLabel); // добавляем лейбл на наш JFrame
+		JLabel dohodLabel = new JLabel (Text); // Р”РѕР±Р°РІР»СЏРµРј РЅР°РґРїРёСЃСЊ 
+		dohodLabel.setBounds(20,10,200,30); // Р·Р°РґР°РµРј СЂР°Р·РјРµСЂ
+		super.add(dohodLabel); // РґРѕР±Р°РІР»СЏРµРј Р»РµР№Р±Р» РЅР° РЅР°С€ JFrame
 	}
 
 }
