@@ -17,36 +17,36 @@ public class admin {
 	public static JTextField log, pas;
 	
 	public admin() {
-	JFrame main_GUI = new JFrame("Депозитный калькулятор с капитализацией");	// создание графического окна
-	main_GUI.setTitle ("Калькулятор");
+	JFrame main_GUI = new JFrame("Р”РµРїРѕР·РёС‚РЅС‹Р№ РєР°Р»СЊРєСѓР»СЏС‚РѕСЂ СЃ РєР°РїРёС‚Р°Р»РёР·Р°С†РёРµР№");	// СЃРѕР·РґР°РЅРёРµ РіСЂР°С„РёС‡РµСЃРєРѕРіРѕ РѕРєРЅР°
+	main_GUI.setTitle ("РљР°Р»СЊРєСѓР»СЏС‚РѕСЂ");
 	main_GUI.setBounds(300,200,400,320);
-	main_GUI.setResizable(false); // фиксированный размер окна
+	main_GUI.setResizable(false); // С„РёРєСЃРёСЂРѕРІР°РЅРЅС‹Р№ СЂР°Р·РјРµСЂ РѕРєРЅР°
 	
-	JPanel main_panel = new JPanel(); // Панель - используется для организации компонентов в окне
+	JPanel main_panel = new JPanel(); // РџР°РЅРµР»СЊ - РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РґР»СЏ РѕСЂРіР°РЅРёР·Р°С†РёРё РєРѕРјРїРѕРЅРµРЅС‚РѕРІ РІ РѕРєРЅРµ
 	main_panel.setLayout(null);
 	main_GUI.add(main_panel);
 	
 	main_panel.setVisible(true);
         main_GUI.setVisible(true);
         
-        JTextField log = new JTextField(""); //Добавляем поле ввода логина
+        JTextField log = new JTextField(""); //Р”РѕР±Р°РІР»СЏРµРј РїРѕР»Рµ РІРІРѕРґР° Р»РѕРіРёРЅР°
     	log.setBounds(20, 100, 150, 30);
     	main_panel.add(log);
     	log.setVisible(true);
     	
-    	JTextField pas = new JTextField(""); //Добавляем поле ввода пароля
+    	JTextField pas = new JTextField(""); //Р”РѕР±Р°РІР»СЏРµРј РїРѕР»Рµ РІРІРѕРґР° РїР°СЂРѕР»СЏ
     	pas.setBounds(220, 100, 150, 30);
     	main_panel.add(pas);
     	pas.setVisible(true);
     	
-    	JButton aut = new JButton("Применить"); //Добавляем кнопку применить
+    	JButton aut = new JButton("РџСЂРёРјРµРЅРёС‚СЊ"); //Р”РѕР±Р°РІР»СЏРµРј РєРЅРѕРїРєСѓ РїСЂРёРјРµРЅРёС‚СЊ
     	aut.setBounds(200, 150, 140, 40);
     	ActionListener actionCreate = new Apply(); 
         aut.addActionListener(actionCreate);
     	
-    	JButton back = new JButton("Назад"); //Добавляем кнопку назад
+    	JButton back = new JButton("РќР°Р·Р°Рґ"); //Р”РѕР±Р°РІР»СЏРµРј РєРЅРѕРїРєСѓ РЅР°Р·Р°Рґ
     	back.setBounds(50, 150, 140, 40);
-    	back.addActionListener(new ActionListener() { // Добавляем слушателя нажатия кнопки
+    	back.addActionListener(new ActionListener() { // Р”РѕР±Р°РІР»СЏРµРј СЃР»СѓС€Р°С‚РµР»СЏ РЅР°Р¶Р°С‚РёСЏ РєРЅРѕРїРєРё
 			@Override
     	public void actionPerformed(ActionEvent e) {
     		main_GUI.setVisible(false);
@@ -57,16 +57,16 @@ public class admin {
     	
     	main_panel.add(aut);
     	
-    	JLabel promo = new JLabel("Новый промокод");
+    	JLabel promo = new JLabel("РќРѕРІС‹Р№ РїСЂРѕРјРѕРєРѕРґ");
     	promo.setBounds(30, 50, 150, 80);
     	main_panel.add(promo);
     	
-    	JLabel can = new JLabel("ИЛЮХА БОХ");
+    	JLabel can = new JLabel("РР›Р®РҐРђ Р‘РћРҐ");
     	can.setBounds(230, 50, 150, 80);
     	main_panel.add(can);
     	
     	main_GUI.setVisible(true);
 	
-	main_GUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // закрытие окна JFrame и процесса Java
+	main_GUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Р·Р°РєСЂС‹С‚РёРµ РѕРєРЅР° JFrame Рё РїСЂРѕС†РµСЃСЃР° Java
 	}
 }
