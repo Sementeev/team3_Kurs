@@ -1,67 +1,70 @@
 package calculator;
 
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener; //библиотека для события слушателя
+import java.awt.event.ActionListener; //ГЎГЁГЎГ«ГЁГ®ГІГҐГЄГ  Г¤Г«Гї Г±Г®ГЎГ»ГІГЁГї Г±Г«ГіГёГ ГІГҐГ«Гї
 import java.io.File;
 
-import javax.swing.*; // Библиотека для GUI (построена на основе awt)
+import javax.swing.*; // ГЃГЁГЎГ«ГЁГ®ГІГҐГЄГ  Г¤Г«Гї GUI (ГЇГ®Г±ГІГ°Г®ГҐГ­Г  Г­Г  Г®Г±Г­Г®ГўГҐ awt)
 
 public class form {
-	static JComboBox<?> combobox; // добавление JComboBox
-		
+	static JComboBox<?> combobox; // Г¤Г®ГЎГ ГўГ«ГҐГ­ГЁГҐ JComboBox
+	public static JTextField sum_field;
+	public static JTextField term_field;
+	public static JTextField rate_field;
+	
 	public form() {
-		JFrame main_GUI = new JFrame("Депозитный калькулятор с капитализацией");	// создание графического окна
-		main_GUI.setTitle ("Калькулятор");
+		JFrame main_GUI = new JFrame("Г„ГҐГЇГ®Г§ГЁГІГ­Г»Г© ГЄГ Г«ГјГЄГіГ«ГїГІГ®Г° Г± ГЄГ ГЇГЁГІГ Г«ГЁГ§Г Г¶ГЁГҐГ©");	// Г±Г®Г§Г¤Г Г­ГЁГҐ ГЈГ°Г ГґГЁГ·ГҐГ±ГЄГ®ГЈГ® Г®ГЄГ­Г 
+		main_GUI.setTitle ("ГЉГ Г«ГјГЄГіГ«ГїГІГ®Г°");
 		main_GUI.setBounds(500,200,400,400);
-		main_GUI.setResizable(false); // фиксированный размер окна
+		main_GUI.setResizable(false); // ГґГЁГЄГ±ГЁГ°Г®ГўГ Г­Г­Г»Г© Г°Г Г§Г¬ГҐГ° Г®ГЄГ­Г 
 		
 		
-		final JPanel main_panel = new JPanel(); // Панель - используется для организации компонентов в окне
+		final JPanel main_panel = new JPanel(); // ГЏГ Г­ГҐГ«Гј - ГЁГ±ГЇГ®Г«ГјГ§ГіГҐГІГ±Гї Г¤Г«Гї Г®Г°ГЈГ Г­ГЁГ§Г Г¶ГЁГЁ ГЄГ®Г¬ГЇГ®Г­ГҐГ­ГІГ®Гў Гў Г®ГЄГ­ГҐ
 		main_panel.setLayout(null);
 		main_GUI.add(main_panel);
 	
-		JLabel laba_info = new JLabel("Депозитный калькулятор"); // Отображение текста или изображения
+		JLabel laba_info = new JLabel("Г„ГҐГЇГ®Г§ГЁГІГ­Г»Г© ГЄГ Г«ГјГЄГіГ«ГїГІГ®Г°"); // ГЋГІГ®ГЎГ°Г Г¦ГҐГ­ГЁГҐ ГІГҐГЄГ±ГІГ  ГЁГ«ГЁ ГЁГ§Г®ГЎГ°Г Г¦ГҐГ­ГЁГї
 		laba_info.setBounds(135,0,150,30);
 		main_panel.add(laba_info);
 		
 	
-		JButton button_exit = new JButton("Выход"); // добавляем кнопку Выход
+		JButton button_exit = new JButton("Г‚Г»ГµГ®Г¤"); // Г¤Г®ГЎГ ГўГ«ГїГҐГ¬ ГЄГ­Г®ГЇГЄГі Г‚Г»ГµГ®Г¤
 		button_exit.setBounds(270,250,100,40);
-		ActionListener actionListener = new ListenerButton(); //создаем слушатель
-		button_exit.addActionListener(actionListener); // добавляем слушатель к кнопке
+		ActionListener actionListener = new ListenerButton(); //Г±Г®Г§Г¤Г ГҐГ¬ Г±Г«ГіГёГ ГІГҐГ«Гј
+		button_exit.addActionListener(actionListener); // Г¤Г®ГЎГ ГўГ«ГїГҐГ¬ Г±Г«ГіГёГ ГІГҐГ«Гј ГЄ ГЄГ­Г®ГЇГЄГҐ
 		main_panel.add(button_exit);
 		
-		JLabel sum_label = new JLabel ("Сумма вклада: "); // Добавляем надпись 
+		JLabel sum_label = new JLabel ("Г‘ГіГ¬Г¬Г  ГўГЄГ«Г Г¤Г : "); // Г„Г®ГЎГ ГўГ«ГїГҐГ¬ Г­Г Г¤ГЇГЁГ±Гј 
 		sum_label.setBounds(10,50,100,40);
 		main_panel.add(sum_label);
 		
-		JTextField sum_field = new JTextField ();  // Добавляем поле ввода
+		sum_field = new JTextField ();  // Г„Г®ГЎГ ГўГ«ГїГҐГ¬ ГЇГ®Г«ГҐ ГўГўГ®Г¤Г 
 		sum_field.setBounds(135, 55, 100, 30);
 		main_panel.add(sum_field);
 		
-		String [] item = { // Создаем массив  
-				"Рубли" , "Доллары" , "Евро" 		
+		String [] item = { // Г‘Г®Г§Г¤Г ГҐГ¬ Г¬Г Г±Г±ГЁГў  
+				"ГђГіГЎГ«ГЁ" , "Г„Г®Г«Г«Г Г°Г»" , "Г…ГўГ°Г®" 		
 			};
 
-		JComboBox currency_box = new JComboBox(item); // Создаем выпадающий бокс
+		JComboBox currency_box = new JComboBox(item); // Г‘Г®Г§Г¤Г ГҐГ¬ ГўГ»ГЇГ Г¤Г ГѕГ№ГЁГ© ГЎГ®ГЄГ±
 		currency_box.setBounds(250,55,100,30);
 		main_panel.add(currency_box);
 		
-		JLabel term_label = new JLabel ("Срок размещения: "); // Добавляем надпись
+		JLabel term_label = new JLabel ("Г‘Г°Г®ГЄ Г°Г Г§Г¬ГҐГ№ГҐГ­ГЁГї: "); // Г„Г®ГЎГ ГўГ«ГїГҐГ¬ Г­Г Г¤ГЇГЁГ±Гј
 		term_label.setBounds(10,85,115,40);
 		main_panel.add(term_label);
-		JTextField term_field = new JTextField ();  // Добавляем поле для ввода
+		term_field = new JTextField ();  // Г„Г®ГЎГ ГўГ«ГїГҐГ¬ ГЇГ®Г«ГҐ Г¤Г«Гї ГўГўГ®Г¤Г 
 		term_field.setBounds(135, 90, 100, 30);
 		main_panel.add(term_field);
 		
-		JLabel rate_label = new JLabel ("Ставка (%): ");  // Добавляем надпись
+		JLabel rate_label = new JLabel ("Г‘ГІГ ГўГЄГ  (%): ");  // Г„Г®ГЎГ ГўГ«ГїГҐГ¬ Г­Г Г¤ГЇГЁГ±Гј
 		rate_label.setBounds(10,120,115,40);
 		main_panel.add(rate_label);
-		JTextField rate_field = new JTextField ();  // Добавляем поле для ввода 
+		rate_field = new JTextField ();  // Г„Г®ГЎГ ГўГ«ГїГҐГ¬ ГЇГ®Г«ГҐ Г¤Г«Гї ГўГўГ®Г¤Г  
 		rate_field.setBounds(135, 125, 100, 30);
 		main_panel.add(rate_field);
 		
-		JLabel resident_label = new JLabel ("Я - резидент РФ: "); // Добавляем надпись 
+		JLabel resident_label = new JLabel ("Гџ - Г°ГҐГ§ГЁГ¤ГҐГ­ГІ ГђГ”: "); // Г„Г®ГЎГ ГўГ«ГїГҐГ¬ Г­Г Г¤ГЇГЁГ±Гј 
 		resident_label.setBounds(10,199,115,40);
 		main_panel.add(resident_label);
 		
@@ -71,66 +74,66 @@ public class form {
 		
 		JMenuBar bar = new JMenuBar();  
 		main_GUI.setJMenuBar(bar);
-		JMenu menu = new JMenu("Меню");
+		JMenu menu = new JMenu("ГЊГҐГ­Гѕ");
 		main_panel.add(menu);
 		bar.add(menu);
-		JMenuItem info = new JMenuItem("Информация о расчете налога");
+		JMenuItem info = new JMenuItem("Г€Г­ГґГ®Г°Г¬Г Г¶ГЁГї Г® Г°Г Г±Г·ГҐГІГҐ Г­Г Г«Г®ГЈГ ");
 		main_panel.add(info);
 		menu.add(info);
 		info.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg1) {
-				JOptionPane.showMessageDialog(main_panel, "Налоговый кодекс РФ предусматривает предусматривает налогооблажение \nвкладов в следующих случаях:\n"
-						+ "- процентная ставка по рублевому вкладу превышает 9.25% \n"
-						+ "- процентная ставка по валютному вкладу превышает 9%");
+				JOptionPane.showMessageDialog(main_panel, "ГЌГ Г«Г®ГЈГ®ГўГ»Г© ГЄГ®Г¤ГҐГЄГ± ГђГ” ГЇГ°ГҐГ¤ГіГ±Г¬Г ГІГ°ГЁГўГ ГҐГІ ГЇГ°ГҐГ¤ГіГ±Г¬Г ГІГ°ГЁГўГ ГҐГІ Г­Г Г«Г®ГЈГ®Г®ГЎГ«Г Г¦ГҐГ­ГЁГҐ \nГўГЄГ«Г Г¤Г®Гў Гў Г±Г«ГҐГ¤ГіГѕГ№ГЁГµ Г±Г«ГіГ·Г ГїГµ:\n"
+						+ "- ГЇГ°Г®Г¶ГҐГ­ГІГ­Г Гї Г±ГІГ ГўГЄГ  ГЇГ® Г°ГіГЎГ«ГҐГўГ®Г¬Гі ГўГЄГ«Г Г¤Гі ГЇГ°ГҐГўГ»ГёГ ГҐГІ 9.25% \n"
+						+ "- ГЇГ°Г®Г¶ГҐГ­ГІГ­Г Гї Г±ГІГ ГўГЄГ  ГЇГ® ГўГ Г«ГѕГІГ­Г®Г¬Гі ГўГЄГ«Г Г¤Гі ГЇГ°ГҐГўГ»ГёГ ГҐГІ 9%");
 			}
 		});
 		
-		JMenuItem students = new JMenuItem("Информация о разработчиках");
-		menu.add(students); // добавляем кнопку на выпадаюзее меню
+		JMenuItem students = new JMenuItem("Г€Г­ГґГ®Г°Г¬Г Г¶ГЁГї Г® Г°Г Г§Г°Г ГЎГ®ГІГ·ГЁГЄГ Гµ");
+		menu.add(students); // Г¤Г®ГЎГ ГўГ«ГїГҐГ¬ ГЄГ­Г®ГЇГЄГі Г­Г  ГўГ»ГЇГ Г¤Г ГѕГ§ГҐГҐ Г¬ГҐГ­Гѕ
 		students.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg1) {
-				Info Information = new Info("Информация о разработчиках", 500, 110); 
-				JLabel students_label1 = new JLabel ("Модератор - Сементеев Антон"); // Добавляем надпись 
-				students_label1.setBounds(20,10,250,30); // задаем размер
+				Info Information = new Info("Г€Г­ГґГ®Г°Г¬Г Г¶ГЁГї Г® Г°Г Г§Г°Г ГЎГ®ГІГ·ГЁГЄГ Гµ", 500, 110); 
+				JLabel students_label1 = new JLabel ("ГЊГ®Г¤ГҐГ°Г ГІГ®Г° - Г‘ГҐГ¬ГҐГ­ГІГҐГҐГў ГЂГ­ГІГ®Г­"); // Г„Г®ГЎГ ГўГ«ГїГҐГ¬ Г­Г Г¤ГЇГЁГ±Гј 
+				students_label1.setBounds(20,10,250,30); // Г§Г Г¤Г ГҐГ¬ Г°Г Г§Г¬ГҐГ°
 				Information.add(students_label1);
-				JLabel students_label2 = new JLabel ("Разработчик 1 - Ильясов Максим"); // Добавляем надпись 
-				students_label2.setBounds(20,35,250,30); // задаем размер
+				JLabel students_label2 = new JLabel ("ГђГ Г§Г°Г ГЎГ®ГІГ·ГЁГЄ 1 - Г€Г«ГјГїГ±Г®Гў ГЊГ ГЄГ±ГЁГ¬"); // Г„Г®ГЎГ ГўГ«ГїГҐГ¬ Г­Г Г¤ГЇГЁГ±Гј 
+				students_label2.setBounds(20,35,250,30); // Г§Г Г¤Г ГҐГ¬ Г°Г Г§Г¬ГҐГ°
 				Information.add(students_label2); 
-				JLabel students_label3 = new JLabel ("Разработчик 2 - Ибрагимов Айдар"); // Добавляем надпись 
-				students_label3.setBounds(260,10,250,30); // задаем размер
+				JLabel students_label3 = new JLabel ("ГђГ Г§Г°Г ГЎГ®ГІГ·ГЁГЄ 2 - Г€ГЎГ°Г ГЈГЁГ¬Г®Гў ГЂГ©Г¤Г Г°"); // Г„Г®ГЎГ ГўГ«ГїГҐГ¬ Г­Г Г¤ГЇГЁГ±Гј 
+				students_label3.setBounds(260,10,250,30); // Г§Г Г¤Г ГҐГ¬ Г°Г Г§Г¬ГҐГ°
 				Information.add(students_label3);
-				JLabel students_label4 = new JLabel ("Разработчик 3 - Сунагатов Ильгиз"); // Добавляем надпись 
-				students_label4.setBounds(260,35,250,30); // задаем размер
+				JLabel students_label4 = new JLabel ("ГђГ Г§Г°Г ГЎГ®ГІГ·ГЁГЄ 3 - Г‘ГіГ­Г ГЈГ ГІГ®Гў Г€Г«ГјГЈГЁГ§"); // Г„Г®ГЎГ ГўГ«ГїГҐГ¬ Г­Г Г¤ГЇГЁГ±Гј 
+				students_label4.setBounds(260,35,250,30); // Г§Г Г¤Г ГҐГ¬ Г°Г Г§Г¬ГҐГ°
 				Information.add(students_label4);
-				JLabel students_label5 = new JLabel (""); // Добавляем надпись 
-				students_label5.setBounds(260,35,250,30); // задаем размер
+				JLabel students_label5 = new JLabel (""); // Г„Г®ГЎГ ГўГ«ГїГҐГ¬ Г­Г Г¤ГЇГЁГ±Гј 
+				students_label5.setBounds(260,35,250,30); // Г§Г Г¤Г ГҐГ¬ Г°Г Г§Г¬ГҐГ°
 				Information.add(students_label5);
 				
 			}
 		});
 		
-		JMenuItem exit = new JMenuItem("Выход");
+		JMenuItem exit = new JMenuItem("Г‚Г»ГµГ®Г¤");
 		main_panel.add(exit);
 		menu.add(exit);
 		exit.addActionListener(actionListener);
 		
 		
 		
-		String [] tax = { "Включать в расчет", "Не включать в расчет"
+		String [] tax = { "Г‚ГЄГ«ГѕГ·Г ГІГј Гў Г°Г Г±Г·ГҐГІ", "ГЌГҐ ГўГЄГ«ГѕГ·Г ГІГј Гў Г°Г Г±Г·ГҐГІ"
 		};
 		
-		JComboBox tax_box = new JComboBox(tax); // Создаем выпадающий бокс
+		JComboBox tax_box = new JComboBox(tax); // Г‘Г®Г§Г¤Г ГҐГ¬ ГўГ»ГЇГ Г¤Г ГѕГ№ГЁГ© ГЎГ®ГЄГ±
 		tax_box.setBounds(135,165,215,30);
 		main_panel.add(tax_box);
 		
 		
-		JButton calc = new JButton("Рассчитать");
-		calc.addActionListener(new ActionListener() { // Добавляем слушателя нажатия кнопки
+		JButton calc = new JButton("ГђГ Г±Г±Г·ГЁГІГ ГІГј");
+		calc.addActionListener(new ActionListener() { // Г„Г®ГЎГ ГўГ«ГїГҐГ¬ Г±Г«ГіГёГ ГІГҐГ«Гї Г­Г Г¦Г ГІГЁГї ГЄГ­Г®ГЇГЄГЁ
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String nalogstr = tax_box.getSelectedItem().toString();
 				boolean ychitivatNalog = true;
-				if(nalogstr == "Не включать в расчет")
+				if(nalogstr == "ГЌГҐ ГўГЄГ«ГѕГ·Г ГІГј Гў Г°Г Г±Г·ГҐГІ")
 					ychitivatNalog = false;
 				calculate calc = new calculate(rate_field.getText(),term_field.getText(),sum_field.getText(),resident_cbox.isSelected(),ychitivatNalog,currency_box.getSelectedItem().toString());
 			}
@@ -138,18 +141,18 @@ public class form {
 		calc.setBounds(20, 250, 100, 40);
 		main_panel.add(calc);
 		
-		JLabel tax_label = new JLabel ("Налог: "); // Добавляем надпись 
+		JLabel tax_label = new JLabel ("ГЌГ Г«Г®ГЈ: "); // Г„Г®ГЎГ ГўГ«ГїГҐГ¬ Г­Г Г¤ГЇГЁГ±Гј 
 		tax_label.setBounds(10,160,115,40);
 		main_panel.add(tax_label);
 				
 		main_GUI.setVisible(true);
 		
 		
-		main_GUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // закрытие окна JFrame и процесса Java
+		main_GUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Г§Г ГЄГ°Г»ГІГЁГҐ Г®ГЄГ­Г  JFrame ГЁ ГЇГ°Г®Г¶ГҐГ±Г±Г  Java
 		}
 		
 		
-		public static void main(String[] args) { // интересные заметки: http://www.mstu.edu.ru/study/materials/java/
+		public static void main(String[] args) { // ГЁГ­ГІГҐГ°ГҐГ±Г­Г»ГҐ Г§Г Г¬ГҐГІГЄГЁ: http://www.mstu.edu.ru/study/materials/java/
 			Login student = new Login();
 			
 		}
