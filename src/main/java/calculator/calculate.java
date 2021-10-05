@@ -19,7 +19,7 @@ public class calculate implements CalculateInterface{ // Создаем клас
 	
 	public void raschet()   {
 		  
-	    files = new File("promo.txt");			//ЧТЕНИЕ ФАЙЛА С ЛОГИНОМ И ПАРОЛЕМ
+	    files = new File("promo.txt");			//ЧТЕНИЕ ФАЙЛА С КОЭФФИЦИЕНТАМИ 
 	     scan = null;
 		try {
 			scan = new Scanner(new FileInputStream(files));
