@@ -1,4 +1,4 @@
-package calculator; // Используем пакет Калькулятор
+package calculator; // РСЃРїРѕР»СЊР·СѓРµРј РїР°РєРµС‚ РљР°Р»СЊРєСѓР»СЏС‚РѕСЂ
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -7,43 +7,48 @@ import java.util.Scanner;
 
 import javax.swing.JLabel; 
 
-public class calculate implements CalculateInterface{ // Создаем класс калькулэйт использующий КалькулэйтИнтерфейс(его создал Разработчик 3)
+public class calculate implements CalculateInterface{ // РЎРѕР·РґР°РµРј РєР»Р°СЃСЃ РєР°Р»СЊРєСѓР»СЌР№С‚ РёСЃРїРѕР»СЊР·СѓСЋС‰РёР№ РљР°Р»СЊРєСѓР»СЌР№С‚РРЅС‚РµСЂС„РµР№СЃ(РµРіРѕ СЃРѕР·РґР°Р» Р Р°Р·СЂР°Р±РѕС‚С‡РёРє 3)
 	String ka;
  	String ko;
 	public static float coef1;
 	public static float coef2;
+	
 	public static File files;
 	public static Scanner scan;
 	
 	public void raschet()   {
 		  
-		  files = new File("G:/User/Загрузки/Calculator/Calculator/src/main/java/promo.txt");			//ЧТЕНИЕ ФАЙЛА С ЛОГИНОМ И ПАРОЛЕМ
-		     scan = null;
-			try {
-				scan = new Scanner(new FileInputStream(files));
-			} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+	    files = new File("promo.txt");			//Р§РўР•РќРР• Р¤РђР™Р›Рђ РЎ Р›РћР“РРќРћРњ Р РџРђР РћР›Р•Рњ
+	     scan = null;
+		try {
+			scan = new Scanner(new FileInputStream(files));
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		    
-				  ka = scan.next();//Логин пользователя
-				  ko = scan.next();//Пароль пользователя
-				  
-		        scan.close();
-		        coef1 = Float.parseFloat(ka);
-		    	coef2 = Float.parseFloat(ko);
-		        }
+		ka = scan.next();//Р›РѕРіРёРЅ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
+		ko = scan.next();//РџР°СЂРѕР»СЊ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
+		  
+        scan.close();
+        coef1 = Float.parseFloat(ka);
+    	coef2 = Float.parseFloat(ko);
+		    	
+		System.out.println("k1"+ coef1 + " k2" + coef2);
+	}
 		        
 	
 	
 	boolean isResident = false; 
 	boolean ychitivatNalog = false;
-	float H, T, a, D1,D2, C; // H- налог T-срок вклада a-процент D1-новая сумма вклада(БЕЗ УЧЕТА НАЛОГА) D2-новая сумма вклада(С УЧЕТОМ НАЛОГА)
-	String valuta = "Рубли"; //"Рубли" , "Доллары" , "Евро"
-	@Override // Переопределяет метод интерфейса
+	float H, T, a, D1,D2, C; // H- РЅР°Р»РѕРі T-СЃСЂРѕРє РІРєР»Р°РґР° a-РїСЂРѕС†РµРЅС‚ D1-РЅРѕРІР°СЏ СЃСѓРјРјР° РІРєР»Р°РґР°(Р‘Р•Р— РЈР§Р•РўРђ РќРђР›РћР“Рђ) D2-РЅРѕРІР°СЏ СЃСѓРјРјР° РІРєР»Р°РґР°(РЎ РЈР§Р•РўРћРњ РќРђР›РћР“Рђ)
+	String valuta = "Р СѓР±Р»Рё"; //"Р СѓР±Р»Рё" , "Р”РѕР»Р»Р°СЂС‹" , "Р•РІСЂРѕ"
+	@Override // РџРµСЂРµРѕРїСЂРµРґРµР»СЏРµС‚ РјРµС‚РѕРґ РёРЅС‚РµСЂС„РµР№СЃР°
 	public void CalculateNalog()
 	{
-		//высчитываем сумму налога
+		System.out.println("k1"+ coef1 + " k2" + coef2);
+		
+		//РІС‹СЃС‡РёС‚С‹РІР°РµРј СЃСѓРјРјСѓ РЅР°Р»РѕРіР°
 		if(isResident)
 			H = (float) ((C* Math.pow(1f+a*30/365, T)-C)-(C*Math.pow(1f+0.0925f*30/365, T)-C))*coef1;
 		else
@@ -52,34 +57,35 @@ public class calculate implements CalculateInterface{ // Создаем класс калькулэй
 	}
 	@Override
 	public void CalculatePrecent() {
-		//высчитываем новую сумму вклада с учетом процентов
+		//РІС‹СЃС‡РёС‚С‹РІР°РµРј РЅРѕРІСѓСЋ СЃСѓРјРјСѓ РІРєР»Р°РґР° СЃ СѓС‡РµС‚РѕРј РїСЂРѕС†РµРЅС‚РѕРІ
 		D1 =  (float) (C*Math.pow(1f+a/12, T));
 	}
 	@Override 
 	public void CalculateDohod() {
-		//считаем итоговое значение вклада, с учетом или без учета налога
-		if(((valuta == "Рубли" & a>=0.0925f) | (valuta != "Рубли" & a>=0.09f)) & ychitivatNalog)
+		//СЃС‡РёС‚Р°РµРј РёС‚РѕРіРѕРІРѕРµ Р·РЅР°С‡РµРЅРёРµ РІРєР»Р°РґР°, СЃ СѓС‡РµС‚РѕРј РёР»Рё Р±РµР· СѓС‡РµС‚Р° РЅР°Р»РѕРіР°
+		if(((valuta == "Р СѓР±Р»Рё" & a>=0.0925f) | (valuta != "Р СѓР±Р»Рё" & a>=0.09f)) & ychitivatNalog)
 			D2 = D1 - H;
 		else
 			D2 = D1;
 	}
-	public calculate(String a_str, String T_str, String C_str, boolean resident, boolean _ychitivatNalog, String _valuta) // Конструктор
+	public calculate(String a_str, String T_str, String C_str, boolean resident, boolean _ychitivatNalog, String _valuta) // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 	{
 		this.valuta =_valuta;
 		this.ychitivatNalog = _ychitivatNalog;
 		this.isResident = resident;
 		if(!ParseAllData(a_str,T_str,C_str)) 
 		{
-			// данные не удалось сконвертировать -  ошибка ввода
-			OutputDeposit output = new OutputDeposit("Ошибка", 150, 50); //создаем всплывающее окно для вывода результатов
-			output.SetData("Ошибка ввода"); //создаем лейбл на нашем окне с текстом ошибки
+			// РґР°РЅРЅС‹Рµ РЅРµ СѓРґР°Р»РѕСЃСЊ СЃРєРѕРЅРІРµСЂС‚РёСЂРѕРІР°С‚СЊ -  РѕС€РёР±РєР° РІРІРѕРґР°
+			OutputDeposit output = new OutputDeposit("РћС€РёР±РєР°", 150, 50); //СЃРѕР·РґР°РµРј РІСЃРїР»С‹РІР°СЋС‰РµРµ РѕРєРЅРѕ РґР»СЏ РІС‹РІРѕРґР° СЂРµР·СѓР»СЊС‚Р°С‚РѕРІ
+			output.SetData("РћС€РёР±РєР° РІРІРѕРґР°"); //СЃРѕР·РґР°РµРј Р»РµР№Р±Р» РЅР° РЅР°С€РµРј РѕРєРЅРµ СЃ С‚РµРєСЃС‚РѕРј РѕС€РёР±РєРё
 			return;
 		}
+		raschet();
 		CalculateDeposit();
-		OutputDeposit output = new OutputDeposit("Расчет", 250, 100);
-		output.SetData("Сумма вклада составил:" + String.valueOf(D2));
+		OutputDeposit output = new OutputDeposit("Р Р°СЃС‡РµС‚", 250, 100);
+		output.SetData("РЎСѓРјРјР° РІРєР»Р°РґР° СЃРѕСЃС‚Р°РІРёР»:" + String.valueOf(D2));
 	}
-	//проверяем все ли введенные данные являются числами (могут ли быть сконвертированны в Float и не пустые) и запоминаем
+	//РїСЂРѕРІРµСЂСЏРµРј РІСЃРµ Р»Рё РІРІРµРґРµРЅРЅС‹Рµ РґР°РЅРЅС‹Рµ СЏРІР»СЏСЋС‚СЃСЏ С‡РёСЃР»Р°РјРё (РјРѕРіСѓС‚ Р»Рё Р±С‹С‚СЊ СЃРєРѕРЅРІРµСЂС‚РёСЂРѕРІР°РЅРЅС‹ РІ Float Рё РЅРµ РїСѓСЃС‚С‹Рµ) Рё Р·Р°РїРѕРјРёРЅР°РµРј
 	public boolean ParseAllData(String a_str, String T_str, String C_str) 
 	{
 		if(isFloat(a_str) && a_str.length()!=0)
@@ -93,7 +99,7 @@ public class calculate implements CalculateInterface{ // Создаем класс калькулэй
 		else return false;
 		return true;
 	}
-	//может ли строка быть сконвертирована в Float
+	//РјРѕР¶РµС‚ Р»Рё СЃС‚СЂРѕРєР° Р±С‹С‚СЊ СЃРєРѕРЅРІРµСЂС‚РёСЂРѕРІР°РЅР° РІ Float
 	public boolean isFloat(String x) throws NumberFormatException
 	{
 	    try {
@@ -104,6 +110,6 @@ public class calculate implements CalculateInterface{ // Создаем класс калькулэй
 	    }
 	}
 	public float getFinalValue() {
-		return D2; //возвращает итоговое значение вклада
+		return D2; //РІРѕР·РІСЂР°С‰Р°РµС‚ РёС‚РѕРіРѕРІРѕРµ Р·РЅР°С‡РµРЅРёРµ РІРєР»Р°РґР°
 	}
 }
