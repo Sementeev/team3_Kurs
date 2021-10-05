@@ -9,12 +9,11 @@ public class parseTest {
 	calculate calc;
 	@Before
     public void setUp() throws Exception {
-		calc = new calculate("10", "6", "10000", true, true, "Рубли"); // создаем экземпляр класса calculate - входные данные не иимеют значения
+		calc = new calculate("10", "6", "10000", true, true, "Р СѓР±Р»Рё"); // СЃРѕР·РґР°РµРј СЌРєР·РµРјРїР»СЏСЂ РєР»Р°СЃСЃР° calculate - РІС…РѕРґРЅС‹Рµ РґР°РЅРЅС‹Рµ РЅРµ РёРёРјРµСЋС‚ Р·РЅР°С‡РµРЅРёСЏ
     }
 
     @Test
     public void test() {
-        assertTrue(calc.ParseAllData("10", "0.023f", "010.2")); // убеждаемся что данные могут быть конвертированны в Float
+        assertTrue(calc.ParseAllData("10", "0.023f", "010.2")); // СѓР±РµР¶РґР°РµРјСЃСЏ С‡С‚Рѕ РґР°РЅРЅС‹Рµ РјРѕРіСѓС‚ Р±С‹С‚СЊ РєРѕРЅРІРµСЂС‚РёСЂРѕРІР°РЅРЅС‹ РІ Float
     }
 }
-
