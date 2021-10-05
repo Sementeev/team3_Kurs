@@ -28,7 +28,7 @@ public class form {
 		main_panel.add(laba_info);
 		
 		JButton button_create = new JButton("Create PDF"); // добавляем кнопку
-		button_create.setBounds(20,200,100,40);
+		button_create.setBounds(150,250,100,40);
 		ActionListener actionCreate = new ListenerCreate(); //создаем слушатель для кнопки PDF
 		button_create.addActionListener(actionCreate); // добавляем слушатель к кнопке
 		main_panel.add(button_create);
