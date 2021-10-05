@@ -9,12 +9,12 @@ public class ModeratorTest {
 Info information;
 @Before
 	public void setUp() throws Exception {
-	information = new Info("Модератор - Сементеев Антон", 500, 110);
+	information = new Info("РњРѕРґРµСЂР°С‚РѕСЂ - РЎРµРјРµРЅС‚РµРµРІ РђРЅС‚РѕРЅ", 500, 110);
 	}
 
 @Test
 public void test() {
-	assertTrue(information.getTitle().equals("Модератор - Сементеев Антон"));
+	assertTrue(information.getTitle().equals("РњРѕРґРµСЂР°С‚РѕСЂ - РЎРµРјРµРЅС‚РµРµРІ РђРЅС‚РѕРЅ"));
 }
 
 }
