@@ -19,7 +19,7 @@ public class form {
 		final JPanel main_panel = new JPanel(); // Панель - используется для организации компонентов в окне
 		main_panel.setLayout(null);
 		main_GUI.add(main_panel);
-		
+	
 		JLabel laba_info = new JLabel("Депозитный калькулятор"); // Отображение текста или изображения
 		laba_info.setBounds(135,0,150,30);
 		main_panel.add(laba_info);
@@ -42,7 +42,7 @@ public class form {
 		String [] item = { // Создаем массив  
 				"Рубли" , "Доллары" , "Евро" 		
 			};
-		
+
 		JComboBox currency_box = new JComboBox(item); // Создаем выпадающий бокс
 		currency_box.setBounds(250,55,100,30);
 		main_panel.add(currency_box);
