@@ -13,34 +13,34 @@ public class Login {
 	public static JTextField log;
 	
 	public Login() {
-	JFrame main_GUI = new JFrame("Депозитный калькулятор с капитализацией");	// создание графического окна
-	main_GUI.setTitle ("Калькулятор");
+	JFrame main_GUI = new JFrame("Р”РµРїРѕР·РёС‚РЅС‹Р№ РєР°Р»СЊРєСѓР»СЏС‚РѕСЂ СЃ РєР°РїРёС‚Р°Р»РёР·Р°С†РёРµР№");	// СЃРѕР·РґР°РЅРёРµ РіСЂР°С„РёС‡РµСЃРєРѕРіРѕ РѕРєРЅР°
+	main_GUI.setTitle ("РљР°Р»СЊРєСѓР»СЏС‚РѕСЂ");
 	main_GUI.setBounds(300,200,400,320);
-	main_GUI.setResizable(false); // фиксированный размер окна
+	main_GUI.setResizable(false); // С„РёРєСЃРёСЂРѕРІР°РЅРЅС‹Р№ СЂР°Р·РјРµСЂ РѕРєРЅР°
 	
-	JPanel main_panel = new JPanel(); // Панель - используется для организации компонентов в окне
+	JPanel main_panel = new JPanel(); // РџР°РЅРµР»СЊ - РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РґР»СЏ РѕСЂРіР°РЅРёР·Р°С†РёРё РєРѕРјРїРѕРЅРµРЅС‚РѕРІ РІ РѕРєРЅРµ
 	main_panel.setLayout(null);
 	main_GUI.add(main_panel);
 	
 	main_panel.setVisible(true);
 	
 	
-	JTextField log = new JTextField(""); //Добавляем поле ввода логина
+	JTextField log = new JTextField(""); //Р”РѕР±Р°РІР»СЏРµРј РїРѕР»Рµ РІРІРѕРґР° Р»РѕРіРёРЅР°
 	log.setBounds(20, 100, 150, 30);
 	main_panel.add(log);
 	log.setVisible(true);
 	
-	JTextField password = new JTextField(""); //Добавляем поле ввода пароля
+	JTextField password = new JTextField(""); //Р”РѕР±Р°РІР»СЏРµРј РїРѕР»Рµ РІРІРѕРґР° РїР°СЂРѕР»СЏ
 	password.setBounds(220, 100, 150, 30);
 	main_panel.add(password);
 	password.setVisible(true);
 	
-	JButton aut = new JButton("авторизация"); //Добавляем кнопку авторизация
+	JButton aut = new JButton("Р°РІС‚РѕСЂРёР·Р°С†РёСЏ"); //Р”РѕР±Р°РІР»СЏРµРј РєРЅРѕРїРєСѓ Р°РІС‚РѕСЂРёР·Р°С†РёСЏ
 	aut.setBounds(200, 150, 140, 40);
-    aut.addActionListener(new ActionListener() {						//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ	
+    aut.addActionListener(new ActionListener() {						
 		
 		
-		public void actionPerformed(ActionEvent e) {									//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+		public void actionPerformed(ActionEvent e) {									 
 			if(log.getText().equals(i) && password.getText().equals(a)) {
 				
 				JOptionPane.showMessageDialog(null, "Welcome", "welcome", 1);
@@ -54,7 +54,7 @@ public class Login {
 					
 			}
 			else {
-            	JOptionPane.showMessageDialog(null, "Error", "Check youre login or password", 0);  //проверка логина и пароля
+            	JOptionPane.showMessageDialog(null, "Error", "Check youre login or password", 0);  //РїСЂРѕРІРµСЂРєР° Р»РѕРіРёРЅР° Рё РїР°СЂРѕР»СЏ
             	password.setText("");
             	log.setText("");
             
@@ -66,16 +66,16 @@ public class Login {
     
 	main_panel.add(aut);
 	
-	JLabel cal = new JLabel("Логин");
+	JLabel cal = new JLabel("Р›РѕРіРёРЅ");
 	cal.setBounds(30, 50, 150, 80);
 	main_panel.add(cal);
 	
-	JLabel can = new JLabel("Пароль");
+	JLabel can = new JLabel("РџР°СЂРѕР»СЊ");
 	can.setBounds(230, 50, 150, 80);
 	main_panel.add(can);
 	
 	main_GUI.setVisible(true);
 	
-	main_GUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // закрытие окна JFrame и процесса Java
+	main_GUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Р·Р°РєСЂС‹С‚РёРµ РѕРєРЅР° JFrame Рё РїСЂРѕС†РµСЃСЃР° Java
    }
 } 
