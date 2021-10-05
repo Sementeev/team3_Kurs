@@ -10,12 +10,12 @@ public class CalculateTest {
 	calculate calc;
 	@Before
     public void setUp() throws Exception {
-		calc = new calculate("10", "6", "10000", true, true, "Рубли"); // создаем экземпляр класса calculate который высчитает итоговое значение вклада
+		calc = new calculate("10", "6", "10000", true, true, "Р СѓР±Р»Рё"); // СЃРѕР·РґР°РµРј СЌРєР·РµРјРїР»СЏСЂ РєР»Р°СЃСЃР° calculate РєРѕС‚РѕСЂС‹Р№ РІС‹СЃС‡РёС‚Р°РµС‚ РёС‚РѕРіРѕРІРѕРµ Р·РЅР°С‡РµРЅРёРµ РІРєР»Р°РґР°
     }
 
     @Test
     public void test() {
-        assertTrue(calc.getFinalValue() == 10497.067f); // убеждаемся что результат верен
+        assertTrue(calc.getFinalValue() == 10497.067f); // СѓР±РµР¶РґР°РµРјСЃСЏ С‡С‚Рѕ СЂРµР·СѓР»СЊС‚Р°С‚ РІРµСЂРµРЅ
     }
 
 }
