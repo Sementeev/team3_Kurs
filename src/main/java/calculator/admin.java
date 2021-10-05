@@ -14,7 +14,8 @@ import javax.swing.JTextField;
 
 public class admin {
 	
-	public static JTextField log, pas;
+	public static JTextField log;
+	public static JTextField pas;
 	
 	public admin() {
 	JFrame main_GUI = new JFrame("Депозитный калькулятор с капитализацией");	// создание графического окна
@@ -29,21 +30,22 @@ public class admin {
 	main_panel.setVisible(true);
         main_GUI.setVisible(true);
         
-        JTextField log = new JTextField(""); //Добавляем поле ввода логина
+        log = new JTextField("1.5"); //Добавляем поле ввода логина
     	log.setBounds(20, 100, 150, 30);
     	main_panel.add(log);
     	log.setVisible(true);
     	
-    	JTextField pas = new JTextField(""); //Добавляем поле ввода пароля
+    	
+    	pas = new JTextField("1.3"); //Добавляем поле ввода пароля
     	pas.setBounds(220, 100, 150, 30);
     	main_panel.add(pas);
     	pas.setVisible(true);
     	
-    	JButton aut = new JButton("Применить"); //Добавляем кнопку применить
-    	aut.setBounds(200, 150, 140, 40);
-    	ActionListener actionCreate = new Apply(); 
-        aut.addActionListener(actionCreate);
-    	
+    	JButton ap = new JButton("Применить"); //Добавляем кнопку применить
+    	ap.setBounds(200, 150, 140, 40);
+    	ActionListener actionCreate1 = new Apply(); 
+        ap.addActionListener(actionCreate1);
+   
     	JButton back = new JButton("Назад"); //Добавляем кнопку назад
     	back.setBounds(50, 150, 140, 40);
     	back.addActionListener(new ActionListener() { // Добавляем слушателя нажатия кнопки
@@ -55,7 +57,7 @@ public class admin {
     	});
     	main_panel.add(back);
     	
-    	main_panel.add(aut);
+    	main_panel.add(ap);
     	
     	JLabel promo = new JLabel("Новый промокод");
     	promo.setBounds(30, 50, 150, 80);
