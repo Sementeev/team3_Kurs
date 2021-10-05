@@ -16,7 +16,7 @@ public class Apply implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 
-	file = new File("G:/User/Загрузки/Calculator/Calculator/src/main/java/promo.txt");
+	file = new File("promo.txt");
 
 	
 
@@ -34,7 +34,7 @@ public class Apply implements ActionListener {
 		writer.println(k1);
 		writer.println(k2);
 		writer.close();
-		System.out.println("Илья не спи");
+		System.out.println("РћРїРµСЂР°С†РёСЏ РїСЂРѕС€Р»Р° СѓСЃРїРµС€РЅРѕ");
 
 }
 }
