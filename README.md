@@ -1,1 +1,1 @@
-[![Build Status](https://travis-ci.com/Loginova16/Loginova_Team16.svg?branch=master)](https://travis-ci.com/Loginova16/Loginova_Team16)
+[![Build Status](https://app.travis-ci.com/Sementeev/team3_Kurs.svg?branch=master)](https://app.travis-ci.com/Sementeev/team3_Kurs)
