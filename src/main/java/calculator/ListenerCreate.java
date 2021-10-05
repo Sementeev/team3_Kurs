@@ -41,11 +41,11 @@ public class ListenerCreate implements ActionListener {
 			e.printStackTrace();
 		}
 		
-		String string_pdf = "Добрый день замечательные группы ПИ второго курса кафедры АСУ УГАТУ! Здесь будет пример вывода текста!";
+		String string_pdf = "Вас приветствувет мастер депозитного калькулятор с капитализацией";
 		Paragraph paragraph = new Paragraph();
 	    paragraph.add(new Paragraph(string_pdf, new Font(times,14)));
 	    
-	    String string_pdf2 = "Дополнительный текст, который выводится в PDF. При этом нужно понимать, что можно указывать значения переменных, которые будут выводится в файл PDF.";
+	    String string_pdf2 = "Ниже представленны введенные вами данные и полученый результат. Для изменения коэф. обратитесь к администратору";
 	    paragraph.add(new Paragraph(string_pdf2, new Font(times,14)));
 	
 	    try {
@@ -131,10 +131,10 @@ public class ListenerCreate implements ActionListener {
 	}
 
 	private void addHeader(PdfPTable table) {
-		Stream.of("Number", "Group", "FIO", "Points")
+		Stream.of("Deposit amount", "Placement period", "Interest rate", "Result")
 	      .forEach(columnTitle -> {
 	        PdfPCell header = new PdfPCell();
-	        header.setBackgroundColor(BaseColor.LIGHT_GRAY);
+	        header.setBackgroundColor(BaseColor.GREEN);
 	        header.setBorderWidth(2);
 	        header.setPhrase(new Phrase(columnTitle));
 	        table.addCell(header);
@@ -144,3 +144,4 @@ public class ListenerCreate implements ActionListener {
 
 	
 }
+
