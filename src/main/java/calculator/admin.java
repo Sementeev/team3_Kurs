@@ -59,11 +59,11 @@ public class admin {
     	
     	main_panel.add(ap);
     	
-    	JLabel promo = new JLabel("Новый промокод");
+    	JLabel promo = new JLabel("Новый коэффициент"); 
     	promo.setBounds(30, 50, 150, 80);
     	main_panel.add(promo);
     	
-    	JLabel can = new JLabel("Новый промокод");
+    	JLabel can = new JLabel("Новый коэффициент");
     	can.setBounds(230, 50, 150, 80);
     	main_panel.add(can);
     	
