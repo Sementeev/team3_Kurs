@@ -12,6 +12,7 @@ public class calculate implements CalculateInterface{ // Создаем клас
  	String ko;
 	public static float coef1;
 	public static float coef2;
+	public static String result;
 	
 	public static File files;
 	public static Scanner scan;
@@ -63,10 +64,14 @@ public class calculate implements CalculateInterface{ // Создаем клас
 	@Override 
 	public void CalculateDohod() {
 		//считаем итоговое значение вклада, с учетом или без учета налога
-		if(((valuta == "Рубли" & a>=0.0925f) | (valuta != "Рубли" & a>=0.09f)) & ychitivatNalog)
+		if(((valuta == "Рубли" & a>=0.0925f) | (valuta != "Рубли" & a>=0.09f)) & ychitivatNalog) {
 			D2 = D1 - H;
-		else
+		result = String.valueOf(D2);
+		}
+		else {
 			D2 = D1;
+		result = String.valueOf(D2);
+		}
 	}
 	public calculate(String a_str, String T_str, String C_str, boolean resident, boolean _ychitivatNalog, String _valuta) 
 	{
