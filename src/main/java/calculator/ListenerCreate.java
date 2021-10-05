@@ -25,7 +25,7 @@ public class ListenerCreate implements ActionListener {
 	
 	@Override 
 	public void actionPerformed(ActionEvent arg0) { 
-		Document document = new Document(); //создание класса Document
+		Document document = new Document(); //СЃРѕР·РґР°РЅРёРµ РєР»Р°СЃСЃР° Document
 		try {
 			PdfWriter.getInstance(document, new FileOutputStream("Check.pdf"));
 		} catch (FileNotFoundException | DocumentException e) {
@@ -41,11 +41,11 @@ public class ListenerCreate implements ActionListener {
 			e.printStackTrace();
 		}
 		
-		String string_pdf = "Добрый день замечательные группы ПИ второго курса кафедры АСУ УГАТУ! Здесь будет пример вывода текста!";
+		String string_pdf = "Р”РѕР±СЂС‹Р№ РґРµРЅСЊ Р·Р°РјРµС‡Р°С‚РµР»СЊРЅС‹Рµ РіСЂСѓРїРїС‹ РџР РІС‚РѕСЂРѕРіРѕ РєСѓСЂСЃР° РєР°С„РµРґСЂС‹ РђРЎРЈ РЈР“РђРўРЈ! Р—РґРµСЃСЊ Р±СѓРґРµС‚ РїСЂРёРјРµСЂ РІС‹РІРѕРґР° С‚РµРєСЃС‚Р°!";
 		Paragraph paragraph = new Paragraph();
 	    paragraph.add(new Paragraph(string_pdf, new Font(times,14)));
 	    
-	    String string_pdf2 = "Дополнительный текст, который выводится в PDF. При этом нужно понимать, что можно указывать значения переменных, которые будут выводится в файл PDF.";
+	    String string_pdf2 = "Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Р№ С‚РµРєСЃС‚, РєРѕС‚РѕСЂС‹Р№ РІС‹РІРѕРґРёС‚СЃСЏ РІ PDF. РџСЂРё СЌС‚РѕРј РЅСѓР¶РЅРѕ РїРѕРЅРёРјР°С‚СЊ, С‡С‚Рѕ РјРѕР¶РЅРѕ СѓРєР°Р·С‹РІР°С‚СЊ Р·РЅР°С‡РµРЅРёСЏ РїРµСЂРµРјРµРЅРЅС‹С…, РєРѕС‚РѕСЂС‹Рµ Р±СѓРґСѓС‚ РІС‹РІРѕРґРёС‚СЃСЏ РІ С„Р°Р№Р» PDF.";
 	    paragraph.add(new Paragraph(string_pdf2, new Font(times,14)));
 	
 	    try {
@@ -55,7 +55,7 @@ public class ListenerCreate implements ActionListener {
 		}
 	    	
 	    
-	    //добавление изображения в pdf
+	    //РґРѕР±Р°РІР»РµРЅРёРµ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ РІ pdf
 	    URL url = getClass().getResource("/picture/ugatu.png");
 	    Image img = null;
 		try {
@@ -73,7 +73,7 @@ public class ListenerCreate implements ActionListener {
 			e2.printStackTrace();
 		}
 		
-		img.setAbsolutePosition(90, 500); //позиционирование изображения в PDF
+		img.setAbsolutePosition(90, 500); //РїРѕР·РёС†РёРѕРЅРёСЂРѕРІР°РЅРёРµ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ РІ PDF
 		
 		try {
 				document.add(img);
@@ -82,7 +82,7 @@ public class ListenerCreate implements ActionListener {
 			}
 	    
 	    
-		 //организация перехода на следующую строку
+		 //РѕСЂРіР°РЅРёР·Р°С†РёСЏ РїРµСЂРµС…РѕРґР° РЅР° СЃР»РµРґСѓСЋС‰СѓСЋ СЃС‚СЂРѕРєСѓ
 		 paragraph.clear();
 		 String string_pdf3 = " ";
 		 paragraph.add(new Paragraph(string_pdf3, new Font(times,14)));
@@ -94,8 +94,8 @@ public class ListenerCreate implements ActionListener {
 			}
 		 
 		 
-	    //добавление таблицы
-		 PdfPTable table = new PdfPTable(4); //создание таблицы с 4 столбцами
+	    //РґРѕР±Р°РІР»РµРЅРёРµ С‚Р°Р±Р»РёС†С‹
+		 PdfPTable table = new PdfPTable(4); //СЃРѕР·РґР°РЅРёРµ С‚Р°Р±Р»РёС†С‹ СЃ 4 СЃС‚РѕР»Р±С†Р°РјРё
 		 addHeader(table);
 		 addRows(table);
 		 
@@ -105,13 +105,13 @@ public class ListenerCreate implements ActionListener {
 			e.printStackTrace();
 		}
 		
-		document.close(); //закрытие и сохранение документа PDF
+		document.close(); //Р·Р°РєСЂС‹С‚РёРµ Рё СЃРѕС…СЂР°РЅРµРЅРёРµ РґРѕРєСѓРјРµРЅС‚Р° PDF
 		
 	}
 
 	private void addRows(PdfPTable table) {
 		
-		//заполнение таблицы вводимыми значения в текстовые поля на главной форме
+		//Р·Р°РїРѕР»РЅРµРЅРёРµ С‚Р°Р±Р»РёС†С‹ РІРІРѕРґРёРјС‹РјРё Р·РЅР°С‡РµРЅРёСЏ РІ С‚РµРєСЃС‚РѕРІС‹Рµ РїРѕР»СЏ РЅР° РіР»Р°РІРЅРѕР№ С„РѕСЂРјРµ
 		String cell1 = "null";
 		String cell2 = "null";
 		String cell3 = "null";
@@ -127,7 +127,7 @@ public class ListenerCreate implements ActionListener {
 	    table.addCell(cell3);
 	    table.addCell(cell4);
 		
-	    //выше должен быть текст на русском языке, как его вывести можно посмотреть в справке.
+	    //РІС‹С€Рµ РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ С‚РµРєСЃС‚ РЅР° СЂСѓСЃСЃРєРѕРј СЏР·С‹РєРµ, РєР°Рє РµРіРѕ РІС‹РІРµСЃС‚Рё РјРѕР¶РЅРѕ РїРѕСЃРјРѕС‚СЂРµС‚СЊ РІ СЃРїСЂР°РІРєРµ.
 	}
 
 	private void addHeader(PdfPTable table) {
