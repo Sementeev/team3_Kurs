@@ -27,6 +27,12 @@ public class form {
 		laba_info.setBounds(135,0,150,30);
 		main_panel.add(laba_info);
 		
+		JButton button_create = new JButton("Create PDF"); // добавляем кнопку
+		button_create.setBounds(20,200,100,40);
+		ActionListener actionCreate = new ListenerCreate(); //создаем слушатель для кнопки PDF
+		button_create.addActionListener(actionCreate); // добавляем слушатель к кнопке
+		main_panel.add(button_create);
+		
 	
 		JButton button_exit = new JButton("Выход"); // добавляем кнопку Выход
 		button_exit.setBounds(270,250,100,40);
