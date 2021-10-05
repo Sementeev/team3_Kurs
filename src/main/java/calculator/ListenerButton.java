@@ -2,7 +2,7 @@ package calculator;
 
 import java.awt.event.*;
 
-// класс реализующий слушатель (ожидания нажатия кнопки)
+// РєР»Р°СЃСЃ СЂРµР°Р»РёР·СѓСЋС‰РёР№ СЃР»СѓС€Р°С‚РµР»СЊ (РѕР¶РёРґР°РЅРёСЏ РЅР°Р¶Р°С‚РёСЏ РєРЅРѕРїРєРё)
 public class ListenerButton implements ActionListener {
 
 	public void actionPerformed(ActionEvent arg0) {
