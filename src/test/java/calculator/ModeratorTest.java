@@ -1,4 +1,4 @@
-/*package calculator;
+package calculator;
 
 import static org.junit.Assert.*;
 import org.junit.Before;
@@ -17,4 +17,4 @@ public void test() {
 	assertTrue(information.getTitle().equals("Ìîäåðàòîð - Ñåìåíòååâ Àíòîí"));
 }
 
-}*/
+}
