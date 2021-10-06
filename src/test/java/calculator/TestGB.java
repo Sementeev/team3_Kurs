@@ -1,4 +1,4 @@
-package calculator;
+/*package calculator;
 
 import static org.junit.Assert.*;
 
@@ -30,7 +30,7 @@ class TestClass extends GFrameBuilder{
 
 }
 
-
+*/
 
 // когда в 13 строке я создавал свйо класс абстр. и он должен был автомастом задать имя tezt и в 18 строке я проверяю стал ли он реально test,
 // если стал, то мой класс реально сработал и я крассавчик
