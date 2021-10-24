@@ -1,4 +1,4 @@
-package calculator;
+package Calcul;
 
 import java.awt.event.*;
 

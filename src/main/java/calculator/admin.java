@@ -1,4 +1,4 @@
-package calculator;
+package Calcul;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -35,11 +35,7 @@ public class admin {
     	main_panel.add(log);
     	log.setVisible(true);
     	
-    	
-    	pas = new JTextField(""); //Добавляем поле ввода пароля
-    	pas.setBounds(220, 100, 150, 30);
-    	main_panel.add(pas);
-    	pas.setVisible(true);
+    
     	
     	JButton ap = new JButton("Применить"); //Добавляем кнопку применить
     	ap.setBounds(200, 150, 140, 40);
@@ -52,7 +48,7 @@ public class admin {
 			@Override
     	public void actionPerformed(ActionEvent e) {
     		main_GUI.setVisible(false);
-			Login back = new Login();
+    		Avtorization back = new Avtorization();
     	}
     	});
     	main_panel.add(back);
@@ -63,9 +59,6 @@ public class admin {
     	promo.setBounds(30, 50, 150, 80);
     	main_panel.add(promo);
     	
-    	JLabel can = new JLabel("Новый коэффициент");
-    	can.setBounds(230, 50, 150, 80);
-    	main_panel.add(can);
     	
     	main_GUI.setVisible(true);
 	

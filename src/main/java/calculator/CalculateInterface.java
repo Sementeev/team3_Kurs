@@ -1,8 +1,8 @@
-package calculator;
+package Calcul;
 public interface CalculateInterface{
 	
 	//метод который будет считать сразу все
-	default void CalculateDeposit() {
+	default void CalculateAll() {
 		CalculateNalog();
 		CalculatePrecent();
 		CalculateDohod();

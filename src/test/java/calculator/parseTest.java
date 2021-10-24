@@ -1,4 +1,5 @@
-/* package calculator;
+/*
+package Calcul;
 
 import static org.junit.Assert.*;
 
@@ -6,15 +7,15 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class parseTest {
-	calculate calc;
+	Calculate calc;
 	@Before
     public void setUp() throws Exception {
-		calc = new calculate("10", "6", "10000", true, true, "Đóáëč"); // ńîçäŕĺě ýęçĺěďë˙đ ęëŕńńŕ calculate - âőîäíűĺ äŕííűĺ íĺ ččěĺţň çíŕ÷ĺíč˙
+		calc = new Calculate("10", "6", "10000", true, true); // ñîçäàåì ýêçåìïëÿð êëàññà calculate - âõîäíûå äàííûå íå èèìåþò çíà÷åíèÿ
     }
 
     @Test
     public void test() {
-        assertTrue(calc.ParseAllData("10", "0.023f", "010.2")); // óáĺćäŕĺěń˙ ÷ňî äŕííűĺ ěîăóň áűňü ęîíâĺđňčđîâŕííű â Float
+        assertTrue(calc.ParseAllData("10", "0.023f", "010.2")); // óáåæäàåìñÿ ÷òî äàííûå ìîãóò áûòü êîíâåðòèðîâàííû â Float
     }
 }
 */

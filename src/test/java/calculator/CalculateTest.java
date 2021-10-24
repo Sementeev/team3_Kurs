@@ -1,21 +1,26 @@
-/*package calculator;
+/*
+package Calcul;
 
 import static org.junit.Assert.*;
+
+import java.util.Arrays;
 
 import org.junit.Before;
 import org.junit.Test;
 
 public class CalculateTest {
 
-	calculate calc;
+	Calculate calc;
 	@Before
     public void setUp() throws Exception {
-		calc = new calculate("10", "6", "10000", true, true, "Рубли"); // создаем экземпляр класса calculate который высчитает итоговое значение вклада
+		calc = new Calculate("10", "6", "10000", true, true); // Г±Г®Г§Г¤Г ГҐГ¬ ГЅГЄГ§ГҐГ¬ГЇГ«ГїГ° ГЄГ«Г Г±Г±Г  calculate ГЄГ®ГІГ®Г°Г»Г© ГўГ»Г±Г·ГЁГІГ ГҐГІ ГЁГІГ®ГЈГ®ГўГ®ГҐ Г§Г­Г Г·ГҐГ­ГЁГҐ ГўГЄГ«Г Г¤Г 
     }
 
     @Test
     public void test() {
-        assertTrue(calc.getFinalValue() == 10497.067f); // убеждаемся что результат верен
+    	 System.out.println(calc.getFinalValue());
+        assertTrue(calc.getFinalValue() == 626400.0); // ГіГЎГҐГ¦Г¤Г ГҐГ¬Г±Гї Г·ГІГ® Г°ГҐГ§ГіГ«ГјГІГ ГІ ГўГҐГ°ГҐГ­
     }
 
-}*/
+}
+*/

@@ -1,6 +1,7 @@
-package calculator;
+package Calcul;
 
 import java.awt.event.*;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -26,8 +27,19 @@ public class ListenerCreate implements ActionListener {
 	@Override 
 	public void actionPerformed(ActionEvent arg0) { 
 		Document document = new Document(); //создание класса Document
+		
+		String sepka = File.separator;
+		String filepath = "";
+        try {
+            filepath = new File("").getCanonicalPath();
+        } catch (IOException e3) {
+            // TODO Auto-generated catch block
+            e3.printStackTrace();
+        }
+        filepath+=sepka+"Check.pdf";
+        
 		try {
-			PdfWriter.getInstance(document, new FileOutputStream("Check.pdf"));
+			PdfWriter.getInstance(document, new FileOutputStream(filepath));
 		} catch (FileNotFoundException | DocumentException e) {
 			e.printStackTrace();
 		}
@@ -41,11 +53,11 @@ public class ListenerCreate implements ActionListener {
 			e.printStackTrace();
 		}
 		
-		String string_pdf = "Вас приветствувет мастер депозитного калькулятор с капитализацией";
+		String string_pdf = "Добрый день! Вот ваша зарплата!";
 		Paragraph paragraph = new Paragraph();
 	    paragraph.add(new Paragraph(string_pdf, new Font(times,14)));
 	    
-	    String string_pdf2 = "Ниже представленны введенные вами данные и полученый результат. Для изменения коэф. обратитесь к администратору";
+	    String string_pdf2 = "Хорошего Вам дня!";
 	    paragraph.add(new Paragraph(string_pdf2, new Font(times,14)));
 	
 	    try {
@@ -56,7 +68,7 @@ public class ListenerCreate implements ActionListener {
 	    	
 	    
 	    //добавление изображения в pdf
-	    URL url = getClass().getResource("/picture/ugatu.png");
+	    URL url = getClass().getResource("/picture/calcul.jpg");
 	    Image img = null;
 		try {
 			img = Image.getInstance(url.toString());
@@ -73,7 +85,7 @@ public class ListenerCreate implements ActionListener {
 			e2.printStackTrace();
 		}
 		
-		img.setAbsolutePosition(90, 500); //позиционирование изображения в PDF
+		img.setAbsolutePosition(90, 400); //позиционирование изображения в PDF
 		
 		try {
 				document.add(img);
@@ -117,10 +129,10 @@ public class ListenerCreate implements ActionListener {
 		String cell3 = "null";
 		String cell4 = "null";
 		
-		cell1 = form.sum_field.getText();
-		cell2 = form.term_field.getText();
-		cell3 = form.rate_field.getText();
-		cell4 = calculate.result; 
+		cell1 = Form.sum_field.getText();
+		cell2 = Form.term_field.getText();
+		cell3 = Form.rate_field.getText();
+		cell4 = Calculate.result;
 		
 		table.addCell(cell1);
 	    table.addCell(cell2);
@@ -131,10 +143,10 @@ public class ListenerCreate implements ActionListener {
 	}
 
 	private void addHeader(PdfPTable table) {
-		Stream.of("Deposit amount", "Placement period", "Interest rate", "Result")
+		Stream.of("Smena", "Time", "Dni", "Summa")
 	      .forEach(columnTitle -> {
 	        PdfPCell header = new PdfPCell();
-	        header.setBackgroundColor(BaseColor.GREEN);
+	        header.setBackgroundColor(BaseColor.PINK);
 	        header.setBorderWidth(2);
 	        header.setPhrase(new Phrase(columnTitle));
 	        table.addCell(header);
@@ -144,4 +156,3 @@ public class ListenerCreate implements ActionListener {
 
 	
 }
-
