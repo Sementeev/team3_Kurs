@@ -1,4 +1,4 @@
-/*package calculator;
+package calculator;
 
 import static org.junit.Assert.*;
 
@@ -26,4 +26,4 @@ public class CalculateTests {
     }
 
 }
-*/
+
