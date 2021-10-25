@@ -1,4 +1,4 @@
-package calculator;
+/*package calculator;
 
 import static org.junit.Assert.*;
 import org.junit.Before;
@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import Calcul.Info;
 
-//тест формы Инфо
+//ГІГҐГ±ГІ ГґГ®Г°Г¬Г» Г€Г­ГґГ®
 public class MTest {
 
 	Info information;
@@ -21,3 +21,4 @@ public class MTest {
 	}
 
 }
+*/
