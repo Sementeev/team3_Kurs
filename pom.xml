@@ -9,6 +9,8 @@
 <url>http://maven.apache.org</url>
 
 <build>
+<sourceDirectory>src/main/java</sourceDirectory>
+<testSourceDirectory>src/test/java</testSourceDirectory>
 <finalName>CreatePDF</finalName>
 <defaultGoal>package</defaultGoal>
 <pluginManagement>
