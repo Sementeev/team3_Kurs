@@ -141,7 +141,7 @@ public class Form {
 				boolean ychitivatNalog = true;
 				if(nalogstr == "Do not include in the calculation")
 					ychitivatNalog = false;
-				Calculate calc = new Calculate(rate_field.getText(),term_field.getText(),sum_field.getText(),resident_cbox.isSelected(),ychitivatNalog);
+				Calculate calc = new Calculate(rate_field.getText(),term_field.getText(),sum_field.getText(),resident_cbox.isSelected(),ychitivatNalog, nalogstr);
 			}
 	    });
 		calc.setBounds(20, 250, 100, 40);
