@@ -1,4 +1,4 @@
-/*package calculator;
+package calculator;
 
 import static org.junit.Assert.*;
 import org.junit.Before;
@@ -21,4 +21,4 @@ public class MTest {
 	}
 
 }
-*/
+
