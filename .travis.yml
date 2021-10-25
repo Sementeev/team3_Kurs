@@ -10,5 +10,4 @@ after_success:
 - ls -l $TRAVIS_BUILD_DIR/target
 after_failure:
 - echo "Build failure"
-deploy:
-skip_cleanup:true
+
