@@ -1,24 +1,34 @@
-package Calcul; // Р�СЃРїРѕР»СЊР·СѓРµРј РїР°РєРµС‚ РљР°Р»СЊРєСѓР»СЏС‚РѕСЂ
+package Calcul; // Используем пакет Калькулятор
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Scanner;
 
 import javax.swing.JLabel; 
 
-public class Calculate implements CalculateInterface{ // РЎРѕР·РґР°РµРј РєР»Р°СЃСЃ Calculate РёСЃРїРѕР»СЊР·СѓСЋС‰РёР№ CalculateInterface
+public class Calculate implements CalculateInterface{ // Создаем класс калькулэйт использующий КалькулэйтИнтерфейс(его создал Разработчик 3)
+	String ka;
+ 	String ko;
+	public static float coef1;
+	public static float coef2;
+	public static File files;
+	public static Scanner scan;
 	public static String result;
-	boolean isPremia = false; 
-	boolean ychitivatNalog = false;
-	public static float H, T, a, D1,D2, C, Z, X, c; // H- Р Р…Р В°Р В»Р С•Р С– T-РЎвЂљР В°РЎР‚Р С‘РЎвЂћР Р…Р В°РЎРЏ РЎРѓРЎвЂљР В°Р Р†Р С”Р В° a-Р С—РЎР‚Р С•РЎвЂ Р ВµР Р…РЎвЂљ Р С—РЎР‚Р ВµР С�Р С‘Р С‘ D1-Р Р…Р С•Р Р†Р В°РЎРЏ РЎРѓРЎС“Р С�Р С�Р В° Р В·Р В°РЎР‚Р С—Р В»Р В°РЎвЂљРЎвЂ№(Р вЂ�Р вЂўР вЂ” Р Р€Р В§Р вЂўР СћР С’ Р СњР вЂќР В¤Р вЂє) D2-Р Р…Р С•Р Р†Р В°РЎРЏ РЎРѓРЎС“Р С�Р С�Р В° Р Р†Р С”Р В»Р В°Р Т‘Р В°(Р РЋ Р Р€Р В§Р вЂўР СћР С›Р Сљ Р СњР вЂќР В¤Р вЂє) Р РЋ-
+		        
 	protected static String line;
-	@Override // Р СџР ВµРЎР‚Р ВµР С•Р С—РЎР‚Р ВµР Т‘Р ВµР В»РЎРЏР ВµРЎвЂљ Р С�Р ВµРЎвЂљР С•Р Т‘ Р С‘Р Р…РЎвЂљР ВµРЎР‚РЎвЂћР ВµР в„–РЎРѓР В°
+	
+	boolean isResident = false; 
+	boolean ychitivatNalog = false;
+	float H, T, a, D1,D2, C; // H- налог T-срок вклада a-процент D1-новая сумма вклада(БЕЗ УЧЕТА НАЛОГА) D2-новая сумма вклада(С УЧЕТОМ НАЛОГА)
+	String valuta = "Рубли"; //"Рубли" , "Доллары" , "Евро"
+	@Override // Переопределяет метод интерфейса
 	public void CalculateNalog()
 	{
-		if(isPremia) {
-			try {
+try {
 				
 			String sepka = File.separator;
 			String filepath = "";
@@ -43,40 +53,43 @@ public class Calculate implements CalculateInterface{ // РЎРѕР·РґР°Р�
 
 
 			
-			c = Float.parseFloat(line);
-			System.out.println(c);
+			coef1 = Float.parseFloat(line);
+			System.out.println(coef1);
+			coef2 = Float.parseFloat(line);
+			System.out.println(coef1);
 			} catch (FileNotFoundException e) {
 			e.printStackTrace();
-			c = 1; //esli nety faila
+			coef1 = 1; //esli nety faila
+			coef2 = 1; //esli nety faila
 			} catch (IOException e) {
 			e.printStackTrace();
-			}
-
-			
-			H = (float) (T*Z*X)*c;
-		}else {
-			H = (float) (T*Z*X);
-		}
-		}
+			}	
+	//высчитываем сумму налога
+		if(isResident)
+			H = (float) ((C* Math.pow(1f+a*30/365, T)-C)-(C*Math.pow(1f+0.0925f*30/365, T)-C))*coef1;
+		else
+			H = (float) ((C* Math.pow(1f+a*30/365, T)-C)-(C*Math.pow(1f+0.09f*30/365, T)-C))*coef2;
+		
+	}
 	@Override
 	public void CalculatePrecent() {
-		//РІС‹СЃС‡РёС‚С‹РІР°РµРј РЅРѕРІСѓСЋ СЃСѓРјРјСѓ Р·Рї СЃ СѓС‡РµС‚РѕРј РїСЂРѕС†РµРЅС‚РѕРІ
-		D1 =  (float) H;
+		//высчитываем новую сумму вклада с учетом процентов
+		D1 =  (float) (C*Math.pow(1f+a/12, T));
 	}
 	@Override 
 	public void CalculateDohod() {
-		//СЃС‡РёС‚Р°РµРј РёС‚РѕРіРѕРІРѕРµ Р·РЅР°С‡РµРЅРёРµ Р·Рї, СЃ СѓС‡РµС‚РѕРј РёР»Рё Р±РµР· СѓС‡РµС‚Р° РЅР°Р»РѕРіР°
-		if (ychitivatNalog)
-			D2 = (float) (H * 0.87);
+		//считаем итоговое значение вклада, с учетом или без учета налога
+		if(((valuta == "Рубли" & a>=0.0925f) | (valuta != "Рубли" & a>=0.09f)) & ychitivatNalog)
+			D2 = D1 - H;
 		else
 			D2 = D1;
 	}
-	public Calculate(String X_str, String Z_str, String T_str, boolean premia, boolean _ychitivatNalog) // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
+	public Calculate(String a_str, String T_str, String C_str, boolean resident, boolean _ychitivatNalog, String _valuta) // Конструктор
 	{
-	
+		this.valuta =_valuta;
 		this.ychitivatNalog = _ychitivatNalog;
-		this.isPremia = premia;
-		if(!ParseAllData(X_str,Z_str,T_str)) 
+		this.isResident = resident;
+		if(!ParseAllData(a_str,T_str,C_str)) 
 		{
 			// РґР°РЅРЅС‹Рµ РЅРµ СѓРґР°Р»РѕСЃСЊ СЃРєРѕРЅРІРµСЂС‚РёСЂРѕРІР°С‚СЊ -  РѕС€РёР±РєР° РІРІРѕРґР°
 			JFrameText output = new JFrameText("Error", 150, 50); //СЃРѕР·РґР°РµРј РІСЃРїР»С‹РІР°СЋС‰РµРµ РѕРєРЅРѕ РґР»СЏ РІС‹РІРѕРґР° СЂРµР·СѓР»СЊС‚Р°С‚РѕРІ
@@ -88,21 +101,21 @@ public class Calculate implements CalculateInterface{ // РЎРѕР·РґР°Р�
 		output.SetData("Result: " + String.valueOf(D2));
 		result = String.valueOf(D2);
 	}
-	//РїСЂРѕРІРµСЂСЏРµРј РІСЃРµ Р»Рё РІРІРµРґРµРЅРЅС‹Рµ РґР°РЅРЅС‹Рµ СЏРІР»СЏСЋС‚СЃСЏ С‡РёСЃР»Р°РјРё (РјРѕРіСѓС‚ Р»Рё Р±С‹С‚СЊ СЃРєРѕРЅРІРµСЂС‚РёСЂРѕРІР°РЅРЅС‹ РІ Float Рё РЅРµ РїСѓСЃС‚С‹Рµ) Рё Р·Р°РїРѕРјРёРЅР°РµРј
-	public boolean ParseAllData(String X_str, String Z_str, String T_str) 
+	//проверяем все ли введенные данные являются числами (могут ли быть сконвертированны в Float и не пустые) и запоминаем
+	public boolean ParseAllData(String a_str, String T_str, String C_str) 
 	{
-		if(isFloat(X_str) && X_str.length()!=0)
-			X = Float.parseFloat(X_str);
-		else return false;
-		if(isFloat(Z_str) && Z_str.length()!=0)
-			Z = Float.parseFloat(Z_str);
+		if(isFloat(a_str) && a_str.length()!=0)
+			a = Float.parseFloat(a_str)/100f;
 		else return false;
 		if(isFloat(T_str) && T_str.length()!=0)
 			T = Float.parseFloat(T_str);
 		else return false;
+		if(isFloat(C_str) && C_str.length()!=0)
+			C = Float.parseFloat(C_str);
+		else return false;
 		return true;
 	}
-	//РјРѕР¶РµС‚ Р»Рё СЃС‚СЂРѕРєР° Р±С‹С‚СЊ СЃРєРѕРЅРІРµСЂС‚РёСЂРѕРІР°РЅР° РІ Float
+	//может ли строка быть сконвертирована в Float
 	public boolean isFloat(String x) throws NumberFormatException
 	{
 	    try {
@@ -113,6 +126,6 @@ public class Calculate implements CalculateInterface{ // РЎРѕР·РґР°Р�
 	    }
 	}
 	public float getFinalValue() {
-		return D2; //РІРѕР·РІСЂР°С‰Р°РµС‚ РёС‚РѕРіРѕРІРѕРµ Р·РЅР°С‡РµРЅРёРµ 
+		return D2; //возвращает итоговое значение вклада
 	}
 }
