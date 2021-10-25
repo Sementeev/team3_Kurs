@@ -1,6 +1,9 @@
 language: java
 before_script:
 - echo "Starting build"
+dist: xenial
+services:
+- xvfb
 script:
 - mvn clean package
 after_script:
@@ -10,4 +13,3 @@ after_success:
 - ls -l $TRAVIS_BUILD_DIR/target
 after_failure:
 - echo "Build failure"
-
