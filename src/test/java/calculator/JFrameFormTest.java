@@ -1,4 +1,4 @@
-/*package calculator;
+package calculator;
 
 import static org.junit.Assert.*;
 
@@ -7,22 +7,22 @@ import org.junit.Test;
 
 import Calcul.JFrameForm;
 
-//тест абстрактного класса
+//ГІГҐГ±ГІ Г ГЎГ±ГІГ°Г ГЄГІГ­Г®ГЈГ® ГЄГ«Г Г±Г±Г 
 public class JFrameFormTest {
 
 	TestClass testClass;
 	   @Before
 	    public void setUp() throws Exception {
-		   testClass = new TestClass("test", 0, 0); //тут все делает абстрактный класс
+		   testClass = new TestClass("test", 0, 0); //ГІГіГІ ГўГ±ГҐ Г¤ГҐГ«Г ГҐГІ Г ГЎГ±ГІГ°Г ГЄГІГ­Г»Г© ГЄГ«Г Г±Г±
 	    }
 
 	    @Test
 	    public void test() {
-	        assertTrue("test".equals(testClass.getTitle())); // проверяем что название задалось верно
+	        assertTrue("test".equals(testClass.getTitle())); // ГЇГ°Г®ГўГҐГ°ГїГҐГ¬ Г·ГІГ® Г­Г Г§ГўГ Г­ГЁГҐ Г§Г Г¤Г Г«Г®Г±Гј ГўГҐГ°Г­Г®
 	    }
 }
 
-//сощдаем класс наследуемый от абстрактного
+//Г±Г®Г№Г¤Г ГҐГ¬ ГЄГ«Г Г±Г± Г­Г Г±Г«ГҐГ¤ГіГҐГ¬Г»Г© Г®ГІ Г ГЎГ±ГІГ°Г ГЄГІГ­Г®ГЈГ®
 class TestClass extends JFrameForm{
 
 	public TestClass(String _title, int width, int height) {
@@ -31,4 +31,3 @@ class TestClass extends JFrameForm{
 	}
 
 }
-*/
