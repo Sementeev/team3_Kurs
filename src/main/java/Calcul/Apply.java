@@ -41,7 +41,7 @@ public class Apply implements ActionListener {
 		e.printStackTrace();
 	}
 		writer.println(k1);
-		writer.println("  "+k2);
+		writer.println(k2);
 		writer.close();
 		System.out.println("Операция прошла успешно");
 
