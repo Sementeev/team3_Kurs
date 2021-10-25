@@ -1,4 +1,4 @@
-package calculator;
+/*package calculator;
 
 import static org.junit.Assert.*;
 
@@ -10,19 +10,19 @@ import org.junit.Test;
 import Calcul.Calculate;
 
 
-//проверяем правильно ли считает класс Калькулейт
+//ДЏД‘Г®ГўДєД‘Л™ДєД› ДЏД‘Е•ГўДЌГ«ГјГ­Г® Г«ДЌ Е„Г·ДЌЕ€Е•ДєЕ€ Д™Г«Е•Е„Е„ ДЕ•Г«ГјД™ГіГ«ДєГ©Е€
 public class CalculateTests {
 
 	Calculate calc;
 	@Before
     public void setUp() throws Exception {
-		calc = new Calculate("10", "6", "10000", true, true,"Rubli"); //создаем экземпляр класса для работы с ним
+		calc = new Calculate("10", "6", "10000", true, true,"Rubli"); //Е„Г®Г§Г¤Е•ДєД› ГЅД™Г§ДєД›ДЏГ«Л™Д‘ Д™Г«Е•Е„Е„Е• Г¤Г«Л™ Д‘Е•ГЎГ®Е€Е± Е„ Г­ДЌД›
     }
 
     @Test
     public void test() {
     	//System.out.println(calc.getFinalValue());
-        assertTrue(calc.getFinalValue() == 10472.06f); //проверяем что значение соотвествует ожидаемому
+        assertTrue(calc.getFinalValue() == 10472.06f); //ДЏД‘Г®ГўДєД‘Л™ДєД› Г·Е€Г® Г§Г­Е•Г·ДєГ­ДЌДє Е„Г®Г®Е€ГўДєЕ„Е€ГўГіДєЕ€ Г®Д‡ДЌГ¤Е•ДєД›Г®Д›Гі
     }
 
 }
