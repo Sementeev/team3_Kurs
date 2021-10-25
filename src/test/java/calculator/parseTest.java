@@ -1,4 +1,4 @@
-package calculator;
+/*package calculator;
 
 import static org.junit.Assert.*;
 
@@ -11,13 +11,14 @@ public class parseTest {
 	Calculate calc;
 	@Before
     public void setUp() throws Exception {
-		calc = new Calculate("10", "6", "10000", true, true, "Rubli"); //создаем экземпляр класса для работы с ним
+		calc = new Calculate("10", "6", "10000", true, true, "Rubli"); //Е„Г®Г§Г¤Е•ДєД› ГЅД™Г§ДєД›ДЏГ«Л™Д‘ Д™Г«Е•Е„Е„Е• Г¤Г«Л™ Д‘Е•ГЎГ®Е€Е± Е„ Г­ДЌД›
     }
 
     @Test
     public void test() {
-        assertTrue(calc.ParseAllData("10", "0.023f", "010.2")); // проверим парсятся ли данные (тру если парс прошел)
-        assertTrue(!calc.ParseAllData("фыв", "0.023f", "010.2")); // проверим парсятся ли данные (не тру, тк мы передаем букавки)
+        assertTrue(calc.ParseAllData("10", "0.023f", "010.2")); // ДЏД‘Г®ГўДєД‘ДЌД› ДЏЕ•Д‘Е„Л™Е€Е„Л™ Г«ДЌ Г¤Е•Г­Г­Е±Дє (Е€Д‘Гі ДєЕ„Г«ДЌ ДЏЕ•Д‘Е„ ДЏД‘Г®Е™ДєГ«)
+        assertTrue(!calc.ParseAllData("ГґЕ±Гў", "0.023f", "010.2")); // ДЏД‘Г®ГўДєД‘ДЌД› ДЏЕ•Д‘Е„Л™Е€Е„Л™ Г«ДЌ Г¤Е•Г­Г­Е±Дє (Г­Дє Е€Д‘Гі, Е€Д™ Д›Е± ДЏДєД‘ДєГ¤Е•ДєД› ГЎГіД™Е•ГўД™ДЌ)
     }
 
 }
+*/
