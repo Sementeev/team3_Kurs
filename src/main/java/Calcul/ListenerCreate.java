@@ -26,7 +26,7 @@ public class ListenerCreate implements ActionListener {
 	
 	@Override 
 	public void actionPerformed(ActionEvent arg0) { 
-		Document document = new Document(); //создание класса Document
+		Document document = new Document(); //создание класса Document!
 		
 		String sepka = File.separator;
 		String filepath = "";
