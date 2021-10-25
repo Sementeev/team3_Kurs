@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
-Built-By: ilyasov
-Build-Jdk: 15.0.1
+Built-By: Геральт из Ривии
+Build-Jdk: 14.0.1
 Class-Path: junit-4.12.jar hamcrest-core-1.3.jar itextpdf-5.5.13.2.jar b
  cprov-jdk15on-1.66.jar classes/itextpdf-5.5.13.2.jar
 Main-Class: Calcul.Form
