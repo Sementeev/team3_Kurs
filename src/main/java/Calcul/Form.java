@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener; //Р±РёР±Р»РёРѕС‚РµРєР° РґР»СЏ СЃРѕР±С‹С‚РёСЏ СЃР»СѓС€Р°С‚РµР»СЏ
 import java.io.File;
 
-import javax.swing.*; // Р‘РёР±Р»РёРѕС‚РµРєР° РґР»СЏ GUI (РїРѕСЃС‚СЂРѕРµРЅР° РЅР° РѕСЃРЅРѕРІРµ awt)
+import javax.swing.*; // Р‘РёР±Р»РёРѕС‚РµРєР° РґР»СЏ GUI (РїРѕСЃС ‚СЂРѕРµРЅР° РЅР° РѕСЃРЅРѕРІРµ awt)
 
 public class Form {
 	static JComboBox<?> combobox; // РґРѕР±Р°РІР»РµРЅРёРµ JComboBox
