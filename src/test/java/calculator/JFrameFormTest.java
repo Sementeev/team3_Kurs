@@ -1,4 +1,4 @@
-/*package calculator;
+package calculator;
 
 import static org.junit.Assert.*;
 
@@ -31,4 +31,4 @@ class TestClass extends JFrameForm{
 	}
 
 }
-*/
+
