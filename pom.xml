@@ -9,7 +9,7 @@
 <url>http://maven.apache.org</url>
 
 <build>
-<finalName>Deposit calculator with capitalization</finalName>
+<finalName>DepositСalculator</finalName>
 <defaultGoal>package</defaultGoal>
 <pluginManagement>
 <plugins>
