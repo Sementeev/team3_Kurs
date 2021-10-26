@@ -4,7 +4,7 @@
 <artifactId>pdf</artifactId>
 <version>1.1</version>
 <packaging>jar</packaging>
-<name>pdf_create</name>
+<name>Deposit calculator with capitalization</name>
 <description>pdf_create for kurs</description>
 <url>http://maven.apache.org</url>
 
